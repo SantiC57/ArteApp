@@ -54,6 +54,8 @@ namespace ArteApp
                 Resultado.Text = "Obra no encontrada.";
 
             }
+            new InicioSesion().Show();
+            
 
         }
     }

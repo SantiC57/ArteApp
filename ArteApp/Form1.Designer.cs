@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(419, 33);
+            this.button1.Location = new System.Drawing.Point(559, 41);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 28);
+            this.button1.Size = new System.Drawing.Size(171, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "Buscar Obra";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
             // 
             this.Resultado.AutoSize = true;
             this.Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Resultado.Location = new System.Drawing.Point(265, 131);
+            this.Resultado.Location = new System.Drawing.Point(353, 161);
+            this.Resultado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Resultado.Name = "Resultado";
-            this.Resultado.Size = new System.Drawing.Size(0, 24);
+            this.Resultado.Size = new System.Drawing.Size(0, 29);
             this.Resultado.TabIndex = 1;
             // 
             // textBoxObra
@@ -59,19 +61,21 @@
             this.textBoxObra.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxObra.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxObra.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxObra.Location = new System.Drawing.Point(204, 33);
+            this.textBoxObra.Location = new System.Drawing.Point(272, 41);
+            this.textBoxObra.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxObra.Name = "textBoxObra";
-            this.textBoxObra.Size = new System.Drawing.Size(209, 28);
+            this.textBoxObra.Size = new System.Drawing.Size(278, 34);
             this.textBoxObra.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.textBoxObra);
             this.Controls.Add(this.Resultado);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Form1";

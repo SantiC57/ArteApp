@@ -21,5 +21,25 @@ namespace ArteApp
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lkLblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
     }
 }
