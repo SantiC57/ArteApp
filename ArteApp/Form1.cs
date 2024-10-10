@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ArteApp
 {
     public partial class Form1 : Form
     {
+        private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=cancellds23";
+
         Queue<string> obrasDeArte;
         public Form1()
         {
