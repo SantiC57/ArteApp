@@ -39,9 +39,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 254);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 318);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(28, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -49,9 +50,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ArteApp.Properties.Resources.vecteezy_user_icon_on_transparent_background_19879186;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 189);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 236);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -59,9 +61,10 @@
             // LogoBox
             // 
             this.LogoBox.Image = global::ArteApp.Properties.Resources.MuseoLogo;
-            this.LogoBox.Location = new System.Drawing.Point(12, 12);
+            this.LogoBox.Location = new System.Drawing.Point(14, 15);
+            this.LogoBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogoBox.Name = "LogoBox";
-            this.LogoBox.Size = new System.Drawing.Size(49, 44);
+            this.LogoBox.Size = new System.Drawing.Size(55, 55);
             this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoBox.TabIndex = 0;
             this.LogoBox.TabStop = false;
@@ -69,14 +72,15 @@
             // 
             // InicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(308, 486);
+            this.ClientSize = new System.Drawing.Size(346, 608);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LogoBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
