@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lkLblRegistro = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
@@ -44,7 +46,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox2.Location = new System.Drawing.Point(28, 245);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 265);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,19 +76,24 @@
             // 
             // mktxtContraseña1
             // 
-            this.mktxtContraseña1.Location = new System.Drawing.Point(89, 254);
+            this.mktxtContraseña1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mktxtContraseña1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mktxtContraseña1.Location = new System.Drawing.Point(76, 276);
             this.mktxtContraseña1.Name = "mktxtContraseña1";
             this.mktxtContraseña1.PasswordChar = '*';
-            this.mktxtContraseña1.Size = new System.Drawing.Size(145, 22);
+            this.mktxtContraseña1.Size = new System.Drawing.Size(197, 20);
             this.mktxtContraseña1.TabIndex = 3;
-            this.mktxtContraseña1.Text = "Contraseña";
+            this.mktxtContraseña1.Text = "Constraseña";
             this.mktxtContraseña1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(89, 192);
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(76, 200);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(145, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(197, 20);
             this.txtUsuario.TabIndex = 4;
             this.txtUsuario.Tag = "";
             this.txtUsuario.Text = "Usuario";
@@ -125,12 +132,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(21, 232);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(270, 1);
+            this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(21, 302);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(270, 1);
+            this.panel2.TabIndex = 9;
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(308, 486);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lkLblRegistro);
             this.Controls.Add(this.label1);
@@ -143,6 +169,7 @@
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
@@ -161,5 +188,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lkLblRegistro;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
