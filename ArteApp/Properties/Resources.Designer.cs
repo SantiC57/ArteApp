@@ -73,6 +73,16 @@ namespace ArteApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EstaSi {
+            get {
+                object obj = ResourceManager.GetObject("EstaSi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MuseoLogo {
             get {
                 object obj = ResourceManager.GetObject("MuseoLogo", resourceCulture);
