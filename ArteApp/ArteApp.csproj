@@ -100,6 +100,12 @@
   <ItemGroup>
     <Compile Include="Artista.cs" />
     <Compile Include="Cuadro.cs" />
+    <Compile Include="Favoritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favoritos.Designer.cs">
+      <DependentUpon>Favoritos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Favoritos.resx">
+      <DependentUpon>Favoritos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
