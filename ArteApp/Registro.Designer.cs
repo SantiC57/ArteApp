@@ -40,6 +40,8 @@
             this.mskCnfrC = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnRegistro = new System.Windows.Forms.Button();
+            this.chkContraseña = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -60,7 +62,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ArteApp.Properties.Resources.vecteezy_user_icon_on_transparent_background_19879186;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 190);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 135);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -72,7 +74,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 275);
+            this.pictureBox3.Location = new System.Drawing.Point(8, 220);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
@@ -84,7 +86,7 @@
             // 
             this.lblRgis.AutoSize = true;
             this.lblRgis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRgis.Location = new System.Drawing.Point(67, 137);
+            this.lblRgis.Location = new System.Drawing.Point(63, 82);
             this.lblRgis.Name = "lblRgis";
             this.lblRgis.Size = new System.Drawing.Size(168, 32);
             this.lblRgis.TabIndex = 3;
@@ -93,7 +95,7 @@
             // btnSlr
             // 
             this.btnSlr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSlr.Location = new System.Drawing.Point(105, 402);
+            this.btnSlr.Location = new System.Drawing.Point(104, 424);
             this.btnSlr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSlr.Name = "btnSlr";
             this.btnSlr.Size = new System.Drawing.Size(84, 37);
@@ -106,7 +108,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(12, 234);
+            this.panel1.Location = new System.Drawing.Point(8, 179);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 1);
@@ -116,7 +118,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(12, 315);
+            this.panel3.Location = new System.Drawing.Point(8, 260);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(270, 1);
@@ -126,7 +128,7 @@
             // 
             this.txtU.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtU.Location = new System.Drawing.Point(63, 205);
+            this.txtU.Location = new System.Drawing.Point(59, 150);
             this.txtU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtU.Name = "txtU";
             this.txtU.Size = new System.Drawing.Size(153, 19);
@@ -137,10 +139,10 @@
             // 
             this.mskContraseñaR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mskContraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskContraseñaR.Location = new System.Drawing.Point(63, 282);
+            this.mskContraseñaR.Location = new System.Drawing.Point(59, 227);
             this.mskContraseñaR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mskContraseñaR.Name = "mskContraseñaR";
-            this.mskContraseñaR.PasswordChar = '*';
+            this.mskContraseñaR.PasswordChar = '•';
             this.mskContraseñaR.Size = new System.Drawing.Size(153, 19);
             this.mskContraseñaR.TabIndex = 9;
             this.mskContraseñaR.Text = "JAIME";
@@ -149,19 +151,20 @@
             // 
             this.mskCnfrC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mskCnfrC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCnfrC.Location = new System.Drawing.Point(63, 352);
+            this.mskCnfrC.Location = new System.Drawing.Point(59, 297);
             this.mskCnfrC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mskCnfrC.Name = "mskCnfrC";
-            this.mskCnfrC.PasswordChar = '*';
+            this.mskCnfrC.PasswordChar = '•';
             this.mskCnfrC.Size = new System.Drawing.Size(153, 19);
             this.mskCnfrC.TabIndex = 12;
             this.mskCnfrC.Text = "JAIME";
+            this.mskCnfrC.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCnfrC_MaskInputRejected);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(12, 386);
+            this.panel2.Location = new System.Drawing.Point(8, 331);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 1);
@@ -170,7 +173,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 346);
+            this.pictureBox4.Location = new System.Drawing.Point(8, 291);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 30);
@@ -178,12 +181,36 @@
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Location = new System.Drawing.Point(69, 352);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(164, 50);
+            this.btnRegistro.TabIndex = 13;
+            this.btnRegistro.Text = "Registrarse";
+            this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // chkContraseña
+            // 
+            this.chkContraseña.AutoSize = true;
+            this.chkContraseña.Location = new System.Drawing.Point(204, 226);
+            this.chkContraseña.Name = "chkContraseña";
+            this.chkContraseña.Size = new System.Drawing.Size(74, 20);
+            this.chkContraseña.TabIndex = 14;
+            this.chkContraseña.Text = "Mostrar";
+            this.chkContraseña.UseVisualStyleBackColor = true;
+            this.chkContraseña.CheckedChanged += new System.EventHandler(this.chkContraseña_CheckedChanged);
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(308, 486);
+            this.Controls.Add(this.chkContraseña);
+            this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.mskCnfrC);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
@@ -199,6 +226,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -224,5 +252,7 @@
         private System.Windows.Forms.MaskedTextBox mskCnfrC;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.CheckBox chkContraseña;
     }
 }

@@ -13,7 +13,7 @@ namespace ArteApp
 {
     public partial class Form1 : Form
     {
-
+        private string connectionString = "Server=localhost;Database=Tienda;Uid=root;Pwd=admin123";
         Queue<string> obrasDeArte;
         public Form1()
         {
