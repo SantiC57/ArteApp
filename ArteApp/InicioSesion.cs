@@ -37,7 +37,8 @@ namespace ArteApp
 
         private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frm
+            new frmRegistro().Show();
+            this.Hide();
         }
     }
 }
