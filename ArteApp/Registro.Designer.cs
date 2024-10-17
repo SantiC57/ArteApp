@@ -1,6 +1,6 @@
 ﻿namespace ArteApp
 {
-    partial class Registro
+    partial class frmRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -49,10 +49,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ArteApp.Properties.Resources.MuseoLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -60,10 +60,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ArteApp.Properties.Resources.vecteezy_user_icon_on_transparent_background_19879186;
-            this.pictureBox2.Location = new System.Drawing.Point(14, 238);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 190);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -72,10 +72,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox3.Location = new System.Drawing.Point(14, 344);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 275);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -84,19 +84,19 @@
             // 
             this.lblRgis.AutoSize = true;
             this.lblRgis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRgis.Location = new System.Drawing.Point(75, 171);
+            this.lblRgis.Location = new System.Drawing.Point(67, 137);
             this.lblRgis.Name = "lblRgis";
-            this.lblRgis.Size = new System.Drawing.Size(197, 38);
+            this.lblRgis.Size = new System.Drawing.Size(168, 32);
             this.lblRgis.TabIndex = 3;
             this.lblRgis.Text = "REGISTRO";
             // 
             // btnSlr
             // 
             this.btnSlr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSlr.Location = new System.Drawing.Point(118, 502);
+            this.btnSlr.Location = new System.Drawing.Point(105, 402);
             this.btnSlr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSlr.Name = "btnSlr";
-            this.btnSlr.Size = new System.Drawing.Size(94, 46);
+            this.btnSlr.Size = new System.Drawing.Size(84, 37);
             this.btnSlr.TabIndex = 4;
             this.btnSlr.Text = "SALIR";
             this.btnSlr.UseVisualStyleBackColor = true;
@@ -106,30 +106,30 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(14, 292);
+            this.panel1.Location = new System.Drawing.Point(12, 234);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 1);
+            this.panel1.Size = new System.Drawing.Size(270, 1);
             this.panel1.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(14, 394);
+            this.panel3.Location = new System.Drawing.Point(12, 315);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(304, 1);
+            this.panel3.Size = new System.Drawing.Size(270, 1);
             this.panel3.TabIndex = 7;
             // 
             // txtU
             // 
             this.txtU.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtU.Location = new System.Drawing.Point(71, 256);
+            this.txtU.Location = new System.Drawing.Point(63, 205);
             this.txtU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtU.Name = "txtU";
-            this.txtU.Size = new System.Drawing.Size(172, 23);
+            this.txtU.Size = new System.Drawing.Size(153, 19);
             this.txtU.TabIndex = 8;
             this.txtU.Text = "Usuario";
             // 
@@ -137,11 +137,11 @@
             // 
             this.mskContraseñaR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mskContraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskContraseñaR.Location = new System.Drawing.Point(71, 352);
+            this.mskContraseñaR.Location = new System.Drawing.Point(63, 282);
             this.mskContraseñaR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mskContraseñaR.Name = "mskContraseñaR";
             this.mskContraseñaR.PasswordChar = '*';
-            this.mskContraseñaR.Size = new System.Drawing.Size(172, 23);
+            this.mskContraseñaR.Size = new System.Drawing.Size(153, 19);
             this.mskContraseñaR.TabIndex = 9;
             this.mskContraseñaR.Text = "JAIME";
             // 
@@ -149,11 +149,11 @@
             // 
             this.mskCnfrC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mskCnfrC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCnfrC.Location = new System.Drawing.Point(71, 440);
+            this.mskCnfrC.Location = new System.Drawing.Point(63, 352);
             this.mskCnfrC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mskCnfrC.Name = "mskCnfrC";
             this.mskCnfrC.PasswordChar = '*';
-            this.mskCnfrC.Size = new System.Drawing.Size(172, 23);
+            this.mskCnfrC.Size = new System.Drawing.Size(153, 19);
             this.mskCnfrC.TabIndex = 12;
             this.mskCnfrC.Text = "JAIME";
             // 
@@ -161,29 +161,29 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(14, 482);
+            this.panel2.Location = new System.Drawing.Point(12, 386);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 1);
+            this.panel2.Size = new System.Drawing.Size(270, 1);
             this.panel2.TabIndex = 11;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ArteApp.Properties.Resources._3064155;
-            this.pictureBox4.Location = new System.Drawing.Point(14, 432);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 346);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 38);
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
-            // Registro
+            // frmRegistro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(346, 608);
+            this.ClientSize = new System.Drawing.Size(308, 486);
             this.Controls.Add(this.mskCnfrC);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
@@ -198,7 +198,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Registro";
+            this.Name = "frmRegistro";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

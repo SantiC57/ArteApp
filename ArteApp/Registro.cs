@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ArteApp
 {
-    public partial class Registro : Form
+    public partial class frmRegistro : Form
     {
-        public Registro()
+        public frmRegistro()
         {
             InitializeComponent();
         }

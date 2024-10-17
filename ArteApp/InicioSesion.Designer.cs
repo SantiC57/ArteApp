@@ -37,6 +37,7 @@
             this.txtUsuarioIS = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mskConstraseñaIS = new System.Windows.Forms.MaskedTextBox();
+            this.lnkRegistro = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
@@ -134,12 +135,24 @@
             this.mskConstraseñaIS.TabIndex = 8;
             this.mskConstraseñaIS.Text = "Contraseña";
             // 
+            // lnkRegistro
+            // 
+            this.lnkRegistro.AutoSize = true;
+            this.lnkRegistro.Location = new System.Drawing.Point(111, 353);
+            this.lnkRegistro.Name = "lnkRegistro";
+            this.lnkRegistro.Size = new System.Drawing.Size(77, 16);
+            this.lnkRegistro.TabIndex = 9;
+            this.lnkRegistro.TabStop = true;
+            this.lnkRegistro.Text = "Registrarse";
+            this.lnkRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegistro_LinkClicked);
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(308, 486);
+            this.Controls.Add(this.lnkRegistro);
             this.Controls.Add(this.mskConstraseñaIS);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtUsuarioIS);
@@ -174,5 +187,6 @@
         private System.Windows.Forms.TextBox txtUsuarioIS;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MaskedTextBox mskConstraseñaIS;
+        private System.Windows.Forms.LinkLabel lnkRegistro;
     }
 }

@@ -34,5 +34,10 @@ namespace ArteApp
         {
             ActiveForm.Close();
         }
+
+        private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm
+        }
     }
 }
