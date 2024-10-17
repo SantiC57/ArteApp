@@ -13,7 +13,7 @@ namespace ArteApp
 {
     public partial class frmRegistro : Form
     {
-        private string connectionString = "Server=localhost;Database=Tienda;Uid=root;Pwd=admin123";
+        private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=admin123";
         public frmRegistro()
         {
             InitializeComponent();
@@ -48,9 +48,9 @@ namespace ArteApp
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO clientes (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
+                    string query = "INSERT INTO Usuario (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@Usuario", txtU);
+                    command.Parameters.AddWithValue("@Usuario", txtU.Text);
                     command.Parameters.AddWithValue("@Contraseña", mskContraseñaR.Text);
 
                     try
