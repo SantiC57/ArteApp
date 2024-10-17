@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ArteApp
 {
-    public partial class InicioSesion : Form
+    public partial class frmInicioSesion : Form
     {
         private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=cancellds23";
 
-        public InicioSesion()
+        public frmInicioSesion()
         {
             InitializeComponent();
         }
