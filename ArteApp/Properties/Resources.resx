@@ -118,22 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="3064155" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3064155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MuseoLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MuseoLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vecteezy_user-icon-on-transparent-background_19879186" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vecteezy_user-icon-on-transparent-background_19879186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MuseoLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MuseoLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lupa21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EstaSi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EstaSi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lupa2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EstaSi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EstaSi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lupa21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3064155" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3064155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

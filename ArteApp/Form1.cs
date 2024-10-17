@@ -27,7 +27,7 @@ namespace ArteApp
 
         }
 
-     
+        bool menuExpand = false;
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,16 +61,21 @@ namespace ArteApp
 
         }
 
-       
+      
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        private void Abrir_Click(object sender, EventArgs e)
+        {
+            sidebarTransition.Start();
+
+        }
 
         bool sidebarExpand = true;
 
-        
+      
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -86,12 +91,13 @@ namespace ArteApp
                 favoritos.Activate();
             }
         }
-
-
         private void Favoritos_FormClosed(object sender, FormClosedEventArgs e)
         {
+           
             favoritos = null;
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -100,5 +106,30 @@ namespace ArteApp
             this.Hide();
         }
 
+        private void sidebarTransition_Tick_1(object sender, EventArgs e)
+        {
+
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width <= 50)
+                {
+                    sidebarExpand = false;
+                    sidebarTransition.Stop();
+                }
+
+
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width >= 229)
+                {
+                    sidebarExpand = true;
+                    sidebarTransition.Stop();
+                }
+
+            }
+        }
     }
 }
