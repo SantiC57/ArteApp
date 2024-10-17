@@ -15,7 +15,7 @@ namespace ArteApp
     {
         private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=admin123";
         Queue<string> obrasDeArte;
-        
+        Favoritos favortios;
         public Form1()
         {
             InitializeComponent();
