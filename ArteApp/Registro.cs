@@ -31,5 +31,10 @@ namespace ArteApp
         {
             ActiveForm.Close(); 
         }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

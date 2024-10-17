@@ -31,13 +31,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblRgis = new System.Windows.Forms.Label();
+            this.btnSlr = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtU = new System.Windows.Forms.TextBox();
+            this.mskContraseñaR = new System.Windows.Forms.MaskedTextBox();
+            this.mskCnfrC = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,27 +80,27 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // label1
+            // lblRgis
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 38);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "REGISTRO";
+            this.lblRgis.AutoSize = true;
+            this.lblRgis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRgis.Location = new System.Drawing.Point(75, 171);
+            this.lblRgis.Name = "lblRgis";
+            this.lblRgis.Size = new System.Drawing.Size(197, 38);
+            this.lblRgis.TabIndex = 3;
+            this.lblRgis.Text = "REGISTRO";
             // 
-            // button1
+            // btnSlr
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(118, 502);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 46);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "SALIR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSlr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSlr.Location = new System.Drawing.Point(118, 502);
+            this.btnSlr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSlr.Name = "btnSlr";
+            this.btnSlr.Size = new System.Drawing.Size(94, 46);
+            this.btnSlr.TabIndex = 4;
+            this.btnSlr.Text = "SALIR";
+            this.btnSlr.UseVisualStyleBackColor = true;
+            this.btnSlr.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -122,40 +122,40 @@
             this.panel3.Size = new System.Drawing.Size(304, 1);
             this.panel3.TabIndex = 7;
             // 
-            // textBox1
+            // txtU
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(71, 256);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 23);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Usuario";
+            this.txtU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtU.Location = new System.Drawing.Point(71, 256);
+            this.txtU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtU.Name = "txtU";
+            this.txtU.Size = new System.Drawing.Size(172, 23);
+            this.txtU.TabIndex = 8;
+            this.txtU.Text = "Usuario";
             // 
-            // maskedTextBox1
+            // mskContraseñaR
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(71, 352);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '*';
-            this.maskedTextBox1.Size = new System.Drawing.Size(172, 23);
-            this.maskedTextBox1.TabIndex = 9;
-            this.maskedTextBox1.Text = "JAIME";
+            this.mskContraseñaR.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mskContraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskContraseñaR.Location = new System.Drawing.Point(71, 352);
+            this.mskContraseñaR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mskContraseñaR.Name = "mskContraseñaR";
+            this.mskContraseñaR.PasswordChar = '*';
+            this.mskContraseñaR.Size = new System.Drawing.Size(172, 23);
+            this.mskContraseñaR.TabIndex = 9;
+            this.mskContraseñaR.Text = "JAIME";
             // 
-            // maskedTextBox2
+            // mskCnfrC
             // 
-            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(71, 440);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PasswordChar = '*';
-            this.maskedTextBox2.Size = new System.Drawing.Size(172, 23);
-            this.maskedTextBox2.TabIndex = 12;
-            this.maskedTextBox2.Text = "JAIME";
+            this.mskCnfrC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mskCnfrC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCnfrC.Location = new System.Drawing.Point(71, 440);
+            this.mskCnfrC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mskCnfrC.Name = "mskCnfrC";
+            this.mskCnfrC.PasswordChar = '*';
+            this.mskCnfrC.Size = new System.Drawing.Size(172, 23);
+            this.mskCnfrC.TabIndex = 12;
+            this.mskCnfrC.Text = "JAIME";
             // 
             // panel2
             // 
@@ -184,15 +184,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(346, 608);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.mskCnfrC);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.mskContraseñaR);
+            this.Controls.Add(this.txtU);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSlr);
+            this.Controls.Add(this.lblRgis);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -200,6 +200,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -214,13 +215,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblRgis;
+        private System.Windows.Forms.Button btnSlr;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox txtU;
+        private System.Windows.Forms.MaskedTextBox mskContraseñaR;
+        private System.Windows.Forms.MaskedTextBox mskCnfrC;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
     }
