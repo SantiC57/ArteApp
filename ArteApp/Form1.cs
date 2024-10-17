@@ -27,9 +27,7 @@ namespace ArteApp
 
         }
 
-        
-       
-
+     
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,9 +55,50 @@ namespace ArteApp
 
         }
 
+
         private void Form1_Load_1(object sender, EventArgs e)
         {
 
         }
+
+       
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        bool sidebarExpand = true;
+
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (favoritos == null)
+            {
+                favoritos = new Favoritos();
+                favoritos.FormClosed += Favoritos_FormClosed;
+                favoritos.MdiParent = this;
+                favoritos.Show();
+            }
+            else
+            {
+                favoritos.Activate();
+            }
+        }
+
+
+        private void Favoritos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            favoritos = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmInicioSesion inicio = new frmInicioSesion();
+            inicio.Show();
+            this.Hide();
+        }
+
     }
 }
