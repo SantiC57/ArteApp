@@ -43,28 +43,30 @@ namespace ArteApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            if (mskContraseñaR.Text == mskCnfrC.Text)
             {
-                connection.Open();
-                string query = "INSERT INTO clientes (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Usuario", txtU);
-                command.Parameters.AddWithValue("@Contraseña", mskContraseñaR.Text);
-
-
-                try
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    command.ExecuteNonQuery();
+                    connection.Open();
+                    string query = "INSERT INTO clientes (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Usuario", txtU);
+                    command.Parameters.AddWithValue("@Contraseña", mskContraseñaR.Text);
 
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al agregar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al agregar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void chkContraseña_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +91,25 @@ namespace ArteApp
 
         private void mskCnfrC_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+
+        }
+
+        private void chkCnfrC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCnfrC.Checked)
+            {
+
+                mskCnfrC.PasswordChar = '\0';
+
+            }
+
+            else if (chkCnfrC.Checked == false)
+            {
+
+                mskCnfrC.PasswordChar = '•';
+
+
+            }
 
         }
     }

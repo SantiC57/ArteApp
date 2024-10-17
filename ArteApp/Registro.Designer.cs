@@ -42,6 +42,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.chkContraseña = new System.Windows.Forms.CheckBox();
+            this.chkCnfrC = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -203,12 +204,24 @@
             this.chkContraseña.UseVisualStyleBackColor = true;
             this.chkContraseña.CheckedChanged += new System.EventHandler(this.chkContraseña_CheckedChanged);
             // 
+            // chkCnfrC
+            // 
+            this.chkCnfrC.AutoSize = true;
+            this.chkCnfrC.Location = new System.Drawing.Point(204, 291);
+            this.chkCnfrC.Name = "chkCnfrC";
+            this.chkCnfrC.Size = new System.Drawing.Size(74, 20);
+            this.chkCnfrC.TabIndex = 16;
+            this.chkCnfrC.Text = "Mostrar";
+            this.chkCnfrC.UseVisualStyleBackColor = true;
+            this.chkCnfrC.CheckedChanged += new System.EventHandler(this.chkCnfrC_CheckedChanged);
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(308, 486);
+            this.Controls.Add(this.chkCnfrC);
             this.Controls.Add(this.chkContraseña);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.mskCnfrC);
@@ -254,5 +267,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.CheckBox chkContraseña;
+        private System.Windows.Forms.CheckBox chkCnfrC;
     }
 }
