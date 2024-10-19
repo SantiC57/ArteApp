@@ -78,7 +78,8 @@ namespace ArteApp
                     Properties.Resources.LaNocheEstrellada,
                     Properties.Resources.LaUltimaCena,
                     Properties.Resources.LosComederosDePatatas,
-                    Properties.Resources.LaMonaLisa
+                    Properties.Resources.LaMonaLisa,
+                    Properties.Resources.images
                 };
 
                 // Insertar imágenes en la base de datos
