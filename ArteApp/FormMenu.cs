@@ -35,21 +35,42 @@ namespace ArteApp
 
         }
 
-        private byte[] ConvertirImagenABytes(Image imagen)
+
+        private void Limpiar()
         {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                imagen.Save(ms, imagen.RawFormat);
-                return ms.ToArray();
-            }
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM Imagenes"; // Eliminar todos los registros de la tabla Clientes
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.ExecuteNonQuery(); // Ejecutar la consulta de eliminación
+                        }
+
+
+                        
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show($"Error al eliminar clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            
         }
+
+
 
         private void GuardarImagenesEnBaseDeDatos()
         {
+
             // Conexión a MySQL
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
+                Limpiar();
 
                 // Cargar imágenes desde los recursos
                 Image[] imagenes = {
@@ -75,12 +96,24 @@ namespace ArteApp
                     }
                 }
 
-                MessageBox.Show("Imágenes guardadas en la base de datos.");
+                
+
+            }
+        }
+
+        private byte[] ConvertirImagenABytes(Image imagen)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagen.Save(ms, imagen.RawFormat);
+                return ms.ToArray();
             }
         }
 
 
-            private Image ConvertirBytesAImagen(byte[] bytes)
+
+
+        private Image ConvertirBytesAImagen(byte[] bytes)
             {
                 using (MemoryStream ms = new MemoryStream(bytes))
                 {
