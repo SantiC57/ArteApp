@@ -64,7 +64,7 @@ namespace ArteApp
                         if (reader.Read())
                         {
                             // Los datos de inicio de sesión son válidos
-                            Form1 form1 = new Form1();
+                            FormMenu form1 = new FormMenu();
                             form1.Show();
                             this.Hide();
                         }
