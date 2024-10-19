@@ -118,8 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="3064155" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3064155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MuseoLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MuseoLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ElGrito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ElGrito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vecteezy_user-icon-on-transparent-background_19879186" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vecteezy_user-icon-on-transparent-background_19879186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,16 +136,25 @@
   <data name="EstaSi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EstaSi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lupa2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LaUltimaCena" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaUltimaCena.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lupa21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lupa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3064155" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3064155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LaMonaLisa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaMonaLisa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LaNocheEstrellada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaNocheEstrellada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LosComederosDePatatas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LosComederosDePatatas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
