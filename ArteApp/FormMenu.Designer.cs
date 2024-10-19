@@ -109,10 +109,11 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.AutoScroll = true;
+            this.panelDesktop.AutoSize = true;
             this.panelDesktop.Controls.Add(this.btnSiguiente);
             this.panelDesktop.Controls.Add(this.btnAnterior);
             this.panelDesktop.Controls.Add(this.pictureBox1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 80);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1102, 636);
@@ -231,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1322, 716);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
@@ -247,6 +249,7 @@
             this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

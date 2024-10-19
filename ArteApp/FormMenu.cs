@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,101 +17,190 @@ namespace ArteApp
 
         private Form activeForm;
         private Queue<Image> ColaImagenes;
+        private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=admin123";
 
         public FormMenu()
         {
             InitializeComponent();
 
             ColaImagenes = new Queue<Image>();
+            GuardarImagenesEnBaseDeDatos();
 
-            ColaImagenes.Enqueue(Properties.Resources.LaUltimaCena);
-            ColaImagenes.Enqueue(Properties.Resources.LaNocheEstrellada);
-            ColaImagenes.Enqueue(Properties.Resources.LosComederosDePatatas);
+            CargarImagenesDesdeBaseDeDatos();
 
-            pictureBox1.Image = ColaImagenes.Peek();
-        }
-
-        private void FormMenu_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-
-        private void OpenChildForm(Form childForm, object btnSender)
-        {
-            if (activeForm != null)
+            if (ColaImagenes.Count > 0)
             {
-                activeForm.Close();
+                pictureBox1.Image = ColaImagenes.Peek(); // Muestra la primera imagen
             }
-            btnClose.Visible = true;
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.panelDesktop.Controls.Add(childForm);
-            this.panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            lblTitle.Text = childForm.Text;
 
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private byte[] ConvertirImagenABytes(Image imagen)
         {
-            OpenChildForm(new ArteApp.PaginaDeInicio(), sender);
-        }
-
-        private void btnFavoritos_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new ArteApp.Favoritos(), sender);
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            frmInicioSesion forminicio = new frmInicioSesion();
-            forminicio.Show();
-            this.Hide();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
+            using (MemoryStream ms = new MemoryStream())
             {
-                activeForm.Close();
-                Reset();
+                imagen.Save(ms, imagen.RawFormat);
+                return ms.ToArray();
             }
         }
 
-        private void Reset()
+        private void GuardarImagenesEnBaseDeDatos()
         {
-            lblTitle.Text = "HOME";
-            btnClose.Visible = false;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            Image imgActual = ColaImagenes.Dequeue();
-            ColaImagenes.Enqueue(imgActual);
-
-            // Mostrar la nueva imagen al frente de la cola
-            pictureBox1.Image = ColaImagenes.Peek();
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < ColaImagenes.Count - 1; i++)
+            // Conexión a MySQL
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                Image imgActual = ColaImagenes.Dequeue();
-                ColaImagenes.Enqueue(imgActual);
+                connection.Open();
+
+                // Cargar imágenes desde los recursos
+                Image[] imagenes = {
+                    Properties.Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
+                    Properties.Resources.LaNocheEstrellada,
+                    Properties.Resources.LaUltimaCena,
+                    Properties.Resources.LosComederosDePatatas,
+                    Properties.Resources.LaMonaLisa
+                };
+
+                // Insertar imágenes en la base de datos
+                for (int i = 0; i < imagenes.Length; i++)
+                {
+                    byte[] imagenBytes = ConvertirImagenABytes(imagenes[i]);
+
+                    string query = "INSERT INTO imagenes (nombre, imagen) VALUES (@nombre, @imagen)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", "imagen" + (i + 1));
+                        cmd.Parameters.AddWithValue("@imagen", imagenBytes);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Imágenes guardadas en la base de datos.");
+            }
+        }
+
+
+            private Image ConvertirBytesAImagen(byte[] bytes)
+            {
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+                    return Image.FromStream(ms);
+                }
             }
 
-            // Mostrar la imagen que ahora está al frente de la cola (la imagen anterior)
-            pictureBox1.Image = ColaImagenes.Peek();
-        }
+            private void CargarImagenesDesdeBaseDeDatos()
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT imagen FROM imagenes LIMIT 3";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                byte[] imagenBytes = (byte[])reader["imagen"];
+                                Image imagen = ConvertirBytesAImagen(imagenBytes);
+                                ColaImagenes.Enqueue(imagen);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            private void FormMenu_Load(object sender, EventArgs e)
+            {
+
+            }
+
+
+            private void OpenChildForm(Form childForm, object btnSender)
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Close();
+                }
+                btnClose.Visible = true;
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                this.panelDesktop.Controls.Add(childForm);
+                this.panelDesktop.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+                lblTitle.Text = childForm.Text;
+
+            }
+
+            private void btnMenu_Click(object sender, EventArgs e)
+            {
+                OpenChildForm(new ArteApp.PaginaDeInicio(), sender);
+            }
+
+            private void btnFavoritos_Click(object sender, EventArgs e)
+            {
+                OpenChildForm(new ArteApp.Favoritos(), sender);
+            }
+
+            private void btnCerrarSesion_Click(object sender, EventArgs e)
+            {
+                frmInicioSesion forminicio = new frmInicioSesion();
+                forminicio.Show();
+                this.Hide();
+            }
+
+            private void btnClose_Click(object sender, EventArgs e)
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Close();
+                    Reset();
+                }
+            }
+
+            private void Reset()
+            {
+                lblTitle.Text = "HOME";
+                btnClose.Visible = false;
+            }
+
+            private void pictureBox1_Click(object sender, EventArgs e)
+            {
+
+            }
+
+            private void btnSiguiente_Click(object sender, EventArgs e)
+            {
+                if (ColaImagenes.Count > 0)
+                {
+                    // Sacar la imagen actual de la cola y volverla a encolar al final
+                    Image imgActual = ColaImagenes.Dequeue();
+                    ColaImagenes.Enqueue(imgActual);
+
+                    // Mostrar la nueva imagen al frente de la cola
+                    pictureBox1.Image = ColaImagenes.Peek();
+                }
+            }
+
+            private void btnAnterior_Click(object sender, EventArgs e)
+            {
+                if (ColaImagenes.Count > 0)
+                {
+                    // Rotar todas las imágenes excepto la última para simular "retroceder"
+                    for (int i = 0; i < ColaImagenes. Count - 1; i++)
+                    {
+                        Image imgActual = ColaImagenes.Dequeue();
+                        ColaImagenes.Enqueue(imgActual);
+                    }
+
+                    // Mostrar la imagen que ahora está al frente de la cola (la imagen anterior)
+                    pictureBox1.Image = ColaImagenes.Peek();
+                }
+            }
+        
     }
 }
