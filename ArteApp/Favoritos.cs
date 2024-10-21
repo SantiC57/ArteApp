@@ -20,7 +20,6 @@ namespace ArteApp
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             // Añadir más PictureBox y Label según tus necesidades
         }
-
         public void AddFavorite(Image image, string name)
         {
             if (pictureBox1.Image == null)
