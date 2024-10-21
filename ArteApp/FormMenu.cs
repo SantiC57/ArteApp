@@ -18,6 +18,8 @@ namespace ArteApp
         private Form activeForm;
         private Queue<Image> ColaImagenes;
         private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=admin123";
+        private Favoritos favoritosForm;
+
 
         public FormMenu()
         {
@@ -33,6 +35,7 @@ namespace ArteApp
                 pictureBox1.Image = ColaImagenes.Peek(); // Muestra la primera imagen
             }
 
+            favoritosForm = new Favoritos();
         }
 
 
@@ -172,13 +175,14 @@ namespace ArteApp
 
             private void btnMenu_Click(object sender, EventArgs e)
             {
-                OpenChildForm(new ArteApp.PaginaDeInicio(), sender);
+                OpenChildForm(new ArteApp.PaginaDeInicio(favoritosForm), sender);
             }
 
             private void btnFavoritos_Click(object sender, EventArgs e)
             {
-                OpenChildForm(new ArteApp.Favoritos(), sender);
-            }
+            
+            OpenChildForm(favoritosForm, sender);
+        }
 
             private void btnCerrarSesion_Click(object sender, EventArgs e)
             {
@@ -189,12 +193,22 @@ namespace ArteApp
 
             private void btnClose_Click(object sender, EventArgs e)
             {
-                if (activeForm != null)
+            if (activeForm != null)
+            {
+                // Verifica si el formulario activo es "FavoritosForm"
+                if (activeForm.GetType() == typeof(Favoritos))
                 {
-                    activeForm.Close();
-                    Reset();
+                    // Ocultar el formulario en lugar de cerrarlo si es FavoritosForm
+                    activeForm.Hide();
                 }
+                else
+                {
+                    // Cerrar otros formularios normalmente
+                    activeForm.Close();
+                }
+                Reset();
             }
+        }
 
             private void Reset()
             {

@@ -14,10 +14,11 @@ namespace ArteApp
     {
         private Favoritos favoritosForm;
 
-        public PaginaDeInicio()
+
+        public PaginaDeInicio(Favoritos formFavoritos)
         {
             InitializeComponent();
-            favoritosForm = new Favoritos(); 
+            this.favoritosForm = formFavoritos;
         }
 
 
@@ -31,6 +32,17 @@ namespace ArteApp
         {
 
         }
+
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string artworkName = label1.Text;
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    
+
 
         private void Label1_Click_1(object sender, EventArgs e)
         {
@@ -47,20 +59,9 @@ namespace ArteApp
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            string artworkName = label1.Text;
-            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+        
 
-            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            if (!favoritosForm.Visible)
-            {
-                favoritosForm.Show();
-            }
-        }
-
-            private void Label7_Click(object sender, EventArgs e)
+        private void Label7_Click(object sender, EventArgs e)
         {
 
         }
