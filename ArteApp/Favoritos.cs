@@ -120,8 +120,6 @@ namespace ArteApp
 
         private bool CompareImages(Image img1, Image img2)
         {
-            // Aquí puedes comparar las imágenes usando alguna lógica, por ejemplo, comparando tamaños.
-            // En este ejemplo, simplemente comparo el tamaño en bytes.
             byte[] img1Bytes = ImageToByteArray(img1);
             byte[] img2Bytes = ImageToByteArray(img2);
             return StructuralComparisons.StructuralEqualityComparer.Equals(img1Bytes, img2Bytes);
