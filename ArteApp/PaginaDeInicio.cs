@@ -36,7 +36,7 @@ namespace ArteApp
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string artworkName = label1.Text;
+            string artworkName = label2.Text;
             favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -77,19 +77,38 @@ namespace ArteApp
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string artworkName = label2.Text;
+            string artworkName = label5.Text;
             favoritosForm.AddFavorite(pictureBox2.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            string artworkName = label3.Text;
+            string artworkName = label8.Text;
             favoritosForm.AddFavorite(pictureBox3.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string artworkName = label12.Text;
+            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string artworkName = label18.Text;
+            favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string artworkName = label16.Text;
+            favoritosForm.AddFavorite(pictureBox6.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
 
