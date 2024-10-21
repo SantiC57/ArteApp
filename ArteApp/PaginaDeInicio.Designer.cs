@@ -268,7 +268,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.Click += new System.EventHandler(this.PictureBox6_Click);
             // 
             // groupBox4
             // 
@@ -336,7 +336,7 @@
             this.label12.Size = new System.Drawing.Size(150, 24);
             this.label12.TabIndex = 7;
             this.label12.Text = "La Ultima Cena";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.Click += new System.EventHandler(this.Label12_Click);
             // 
             // pictureBox4
             // 
@@ -389,7 +389,7 @@
             this.label7.Size = new System.Drawing.Size(166, 91);
             this.label7.TabIndex = 8;
             this.label7.Text = resources.GetString("label7.Text");
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Click += new System.EventHandler(this.Label7_Click);
             // 
             // label8
             // 
@@ -535,7 +535,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "❤️";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label3
             // 
@@ -564,7 +564,7 @@
             this.label2.Size = new System.Drawing.Size(154, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "La Mona Lisa";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
@@ -578,7 +578,7 @@
             this.label1.Size = new System.Drawing.Size(161, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "AUTOR: Leonardo da Vinci";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // pictureBox1
             // 
@@ -590,7 +590,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // lblInicioSesion
             // 

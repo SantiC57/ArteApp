@@ -12,52 +12,65 @@ namespace ArteApp
 {
     public partial class PaginaDeInicio : Form
     {
+        private Favoritos favoritosForm;
+
         public PaginaDeInicio()
         {
             InitializeComponent();
+            favoritosForm = new Favoritos(); 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void Label1_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string artworkName = label1.Text;
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (!favoritosForm.Visible)
+            {
+                favoritosForm.Show();
+            }
+        }
+
+            private void Label7_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Label12_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void PictureBox6_Click(object sender, EventArgs e)
         {
 
         }
