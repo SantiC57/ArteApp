@@ -158,7 +158,7 @@ namespace ArteApp
             {
                 if (activeForm != null)
                 {
-                    activeForm.Close();
+                    activeForm.Hide();
                 }
                 btnClose.Visible = true;
                 activeForm = childForm;
@@ -180,9 +180,13 @@ namespace ArteApp
 
             private void btnFavoritos_Click(object sender, EventArgs e)
             {
+             if (favoritosForm != null && !favoritosForm.Visible)
+             {
+                favoritosForm.Show();  // Muestra el formulario si estaba oculto
+              }
             
             OpenChildForm(favoritosForm, sender);
-        }
+            }
 
             private void btnCerrarSesion_Click(object sender, EventArgs e)
             {
@@ -193,22 +197,12 @@ namespace ArteApp
 
             private void btnClose_Click(object sender, EventArgs e)
             {
-            if (activeForm != null)
-            {
-                // Verifica si el formulario activo es "FavoritosForm"
-                if (activeForm.GetType() == typeof(Favoritos))
+                if (activeForm != null)
                 {
-                    // Ocultar el formulario en lugar de cerrarlo si es FavoritosForm
                     activeForm.Hide();
+                    Reset();
                 }
-                else
-                {
-                    // Cerrar otros formularios normalmente
-                    activeForm.Close();
-                }
-                Reset();
             }
-        }
 
             private void Reset()
             {
