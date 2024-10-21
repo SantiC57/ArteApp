@@ -38,7 +38,6 @@ namespace ArteApp
         {
             string artworkName = label1.Text;
             favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
-
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     
