@@ -130,6 +130,12 @@
     <Compile Include="PaginaDeInicio2.Designer.cs">
       <DependentUpon>PaginaDeInicio2.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaDeInicio3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaDeInicio3.Designer.cs">
+      <DependentUpon>PaginaDeInicio3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.cs">
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaDeInicio2.resx">
       <DependentUpon>PaginaDeInicio2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaDeInicio3.resx">
+      <DependentUpon>PaginaDeInicio3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,6 +269,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\La adoración de los Reyes Magos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salvator Mundi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dama con un Armino.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Noche estrellada sobre el Ródano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\La casa amarilla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Madonna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Palas y el Centauro.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

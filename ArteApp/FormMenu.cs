@@ -83,12 +83,18 @@ namespace ArteApp
                     Properties.Resources.LosComederosDePatatas,
                     Properties.Resources.LaMonaLisa,
                     Properties.Resources.images,
-                    Properties.Resources.El_Hombre_de_Vitruvio, 
+                    Properties.Resources.El_Hombre_de_Vitruvio,
                     Properties.Resources.Los_girasoles,
                     Properties.Resources.La_niña_enferma,
                     Properties.Resources.El_Bautismo_de_Cristo,
                     Properties.Resources.La_adoración_de_los_Reyes_Magos,
-                    Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete
+                    Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete,
+                    Properties.Resources.Salvator_Mundi,
+                    Properties.Resources.Noche_estrellada_sobre_el_Ródano,
+                    Properties.Resources.Madonna,
+                    Properties.Resources.Dama_con_un_Armino,
+                    Properties.Resources.Palas_y_el_Centauro,
+                    Properties.Resources.La_casa_amarilla
                 };
 
                 // Insertar imágenes en la base de datos

@@ -113,6 +113,16 @@ namespace ArteApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dama_con_un_Armino {
+            get {
+                object obj = ResourceManager.GetObject("Dama con un Armino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dog_House {
             get {
                 object obj = ResourceManager.GetObject("Dog House", resourceCulture);
@@ -176,6 +186,16 @@ namespace ArteApp.Properties {
         internal static System.Drawing.Bitmap La_adoración_de_los_Reyes_Magos {
             get {
                 object obj = ResourceManager.GetObject("La adoración de los Reyes Magos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap La_casa_amarilla {
+            get {
+                object obj = ResourceManager.GetObject("La casa amarilla", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +303,39 @@ namespace ArteApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Madonna {
+            get {
+                object obj = ResourceManager.GetObject("Madonna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MuseoLogo {
             get {
                 object obj = ResourceManager.GetObject("MuseoLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Noche_estrellada_sobre_el_Ródano {
+            get {
+                object obj = ResourceManager.GetObject("Noche estrellada sobre el Ródano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palas_y_el_Centauro {
+            get {
+                object obj = ResourceManager.GetObject("Palas y el Centauro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +356,16 @@ namespace ArteApp.Properties {
         internal static System.Drawing.Bitmap Right {
             get {
                 object obj = ResourceManager.GetObject("Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salvator_Mundi {
+            get {
+                object obj = ResourceManager.GetObject("Salvator Mundi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

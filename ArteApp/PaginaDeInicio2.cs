@@ -47,7 +47,8 @@ namespace ArteApp
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            PaginaDeInicio3 paginaDeInicio3 = new PaginaDeInicio3(favoritosForm); 
+            OpenChildForm(paginaDeInicio3);
         }
 
         private void button8_Click(object sender, EventArgs e)

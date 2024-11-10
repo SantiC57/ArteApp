@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace ArteApp
 {
-    public partial class PaginaDeInicio : Form
+    public partial class PaginaDeInicio3 : Form
     {
         private Favoritos favoritosForm;
         private Form activeForm = null;
-
-        public PaginaDeInicio(Favoritos formFavoritos)
+        public PaginaDeInicio3(Favoritos formFavoritos)
         {
             InitializeComponent();
             this.favoritosForm = formFavoritos;
@@ -23,78 +22,49 @@ namespace ArteApp
 
         private void OpenChildForm(Form childForm)
         {
-            if (activeForm != null) 
-                activeForm.Close(); 
-            activeForm = childForm; 
-            childForm.TopLevel = false; 
-            childForm.FormBorderStyle = FormBorderStyle.None; 
-            childForm.Dock = DockStyle.Fill; 
-            this.Controls.Add(childForm); 
-            this.Tag = childForm; 
-            childForm.BringToFront(); 
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
             childForm.Show();
         }
 
-            private void TextBox1_TextChanged(object sender, EventArgs e)
+            private void PaginaDeInicio3_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-
+            PaginaDeInicio paginaDeInicio = new PaginaDeInicio(favoritosForm); 
+            OpenChildForm(paginaDeInicio);
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+           
+        }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string artworkName = label2.Text;
             favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-
-        private void Label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void Label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             string artworkName = label5.Text;
             favoritosForm.AddFavorite(pictureBox2.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             string artworkName = label8.Text;
             favoritosForm.AddFavorite(pictureBox3.Image, artworkName);
@@ -111,40 +81,21 @@ namespace ArteApp
         private void button6_Click(object sender, EventArgs e)
         {
             string artworkName = label18.Text;
-            favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
+            favoritosForm.AddFavorite(pictureBox6.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             string artworkName = label16.Text;
-            favoritosForm.AddFavorite(pictureBox6.Image, artworkName);
+            favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void PaginaDeInicio_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            
-                PaginaDeInicio2 paginaDeInicio2 = new PaginaDeInicio2(favoritosForm); // Pasa la instancia al constructor
-                OpenChildForm(paginaDeInicio2);
-            }
-
-
-            private void button9_Click(object sender, EventArgs e)
-        {
-            PaginaDeInicio3 paginaDeInicio3 = new PaginaDeInicio3(favoritosForm); 
-            OpenChildForm(paginaDeInicio3);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
+            PaginaDeInicio2 paginaDeInicio2 = new PaginaDeInicio2(favoritosForm); 
+            OpenChildForm(paginaDeInicio2);
         }
     }
 }
-
