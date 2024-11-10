@@ -14,13 +14,11 @@ namespace ArteApp
     {
         private Favoritos favoritosForm;
 
-
         public PaginaDeInicio(Favoritos formFavoritos)
         {
             InitializeComponent();
             this.favoritosForm = formFavoritos;
         }
-
 
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
