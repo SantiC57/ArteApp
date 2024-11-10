@@ -82,7 +82,13 @@ namespace ArteApp
                     Properties.Resources.LaUltimaCena,
                     Properties.Resources.LosComederosDePatatas,
                     Properties.Resources.LaMonaLisa,
-                    Properties.Resources.images
+                    Properties.Resources.images,
+                    Properties.Resources.El_Hombre_de_Vitruvio, 
+                    Properties.Resources.Los_girasoles,
+                    Properties.Resources.La_niña_enferma,
+                    Properties.Resources.El_Bautismo_de_Cristo,
+                    Properties.Resources.La_adoración_de_los_Reyes_Magos,
+                    Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete
                 };
 
                 // Insertar imágenes en la base de datos
@@ -243,6 +249,15 @@ namespace ArteApp
                     pictureBox1.Image = ColaImagenes.Peek();
                 }
             }
-        
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

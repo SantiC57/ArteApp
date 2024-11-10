@@ -124,6 +124,9 @@
   <data name="Lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lupa2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Los girasoles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Los girasoles.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LaNocheEstrellada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LaNocheEstrellada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,12 @@
   <data name="LaUltimaCena" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LaUltimaCena.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="El Hombre de Vitruvio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\El Hombre de Vitruvio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="El Bautismo de Cristo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\El Bautismo de Cristo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MuseoLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MuseoLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +168,15 @@
   </data>
   <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Autorretrato con la oreja vendada y caballete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Autorretrato con la oreja vendada y caballete.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="La niña enferma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La niña enferma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LaMonaLisa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LaMonaLisa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +196,7 @@
   <data name="Left Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Left Arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="La adoración de los Reyes Magos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La adoración de los Reyes Magos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

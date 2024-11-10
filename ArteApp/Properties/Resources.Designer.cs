@@ -83,6 +83,16 @@ namespace ArteApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Autorretrato_con_la_oreja_vendada_y_caballete {
+            get {
+                object obj = ResourceManager.GetObject("Autorretrato con la oreja vendada y caballete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel {
             get {
                 object obj = ResourceManager.GetObject("Cancel", resourceCulture);
@@ -113,6 +123,26 @@ namespace ArteApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap El_Bautismo_de_Cristo {
+            get {
+                object obj = ResourceManager.GetObject("El Bautismo de Cristo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap El_Hombre_de_Vitruvio {
+            get {
+                object obj = ResourceManager.GetObject("El Hombre de Vitruvio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ElGrito {
             get {
                 object obj = ResourceManager.GetObject("ElGrito", resourceCulture);
@@ -136,6 +166,26 @@ namespace ArteApp.Properties {
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap La_adoración_de_los_Reyes_Magos {
+            get {
+                object obj = ResourceManager.GetObject("La adoración de los Reyes Magos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap La_niña_enferma {
+            get {
+                object obj = ResourceManager.GetObject("La niña enferma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +236,16 @@ namespace ArteApp.Properties {
         internal static System.Drawing.Bitmap Left_Arrow {
             get {
                 object obj = ResourceManager.GetObject("Left Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Los_girasoles {
+            get {
+                object obj = ResourceManager.GetObject("Los girasoles", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
