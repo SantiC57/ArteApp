@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaDeInicio3));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -241,11 +240,10 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(184, 110);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(207, 112);
+            this.label15.Size = new System.Drawing.Size(153, 80);
             this.label15.TabIndex = 8;
-            this.label15.Text = "La idea de Van Gogh era mostrar\r\nla pobreza y la dura realidad de\r\nla vida campes" +
-    "ina, lo que resaltó \r\ncon rostros toscos y manos \r\nhuesudas que “han labrado la " +
-    "\r\ntierra” para obtener los \r\nalimentos ";
+            this.label15.Text = "Los colores vibrantes \r\nreflejan su amor por el \r\nlugar y su esperanza \r\nde encon" +
+    "trar inspiración \r\ny compañía artística.";
             // 
             // label16
             // 
@@ -296,10 +294,10 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(188, 113);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(178, 64);
+            this.label17.Size = new System.Drawing.Size(185, 64);
             this.label17.TabIndex = 8;
-            this.label17.Text = "Representaría el nacimiento \r\ndel Amor y de la belleza\r\nespiritual como la fuerza" +
-    " \r\nmotriz de la vida.";
+            this.label17.Text = "Es una alegoría que combina \r\nla mitología y el simbolismo \r\nen una obra llena de" +
+    " \r\ndinamismo y detalles.";
             // 
             // label18
             // 
@@ -374,9 +372,10 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(183, 100);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(196, 112);
+            this.label11.Size = new System.Drawing.Size(172, 80);
             this.label11.TabIndex = 8;
-            this.label11.Text = resources.GetString("label11.Text");
+            this.label11.Text = "Da Vinci utiliza su habilidad \r\nen el manejo de la luz y la\r\nsombra para capturar" +
+    " la\r\nserenidad y el detalle del \r\nrostro de la dama.";
             // 
             // label12
             // 
@@ -427,9 +426,10 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(183, 100);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 112);
+            this.label7.Size = new System.Drawing.Size(156, 96);
             this.label7.TabIndex = 8;
-            this.label7.Text = resources.GetString("label7.Text");
+            this.label7.Text = "La pintura explora temas \r\nde sensualidad y \r\nespiritualidad, con un \r\ntoque oscu" +
+    "ro que \r\ncaracteriza el estilo \r\nemocional de Munch.";
             // 
             // label8
             // 
@@ -492,11 +492,10 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(183, 100);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 96);
+            this.label4.Size = new System.Drawing.Size(176, 64);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Representa la vista desde la \r\nventana orientada al este de \r\nsu habitación de as" +
-    "ilo en Saint-\r\nRémy-de-Provence, justo antes\r\ndel amanecer, con la adición \r\nde " +
-    "un pueblo imaginario.";
+            this.label4.Text = "Van Gogh utiliza pinceladas \r\ncortas y colores vivos para \r\ntransmitir la belleza" +
+    " y la \r\ntranquilidad de la noche.";
             // 
             // label5
             // 
@@ -559,11 +558,10 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(183, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 112);
+            this.label3.Size = new System.Drawing.Size(179, 80);
             this.label3.TabIndex = 8;
-            this.label3.Text = "El retrato de Lisa Gherardini,\r\nesposa de Francesco del \r\nGiocondo, ​más conocido" +
-    " como \r\nLa Gioconda o Monna Lisa, es \r\nuna obra pictórica del polímata\r\nrenacent" +
-    "ista florentino Leonardo\r\n da Vinci. ";
+            this.label3.Text = "Es una de las pocas pinturas\r\nde Da Vinci con temática\r\nreligiosa directa, mostra" +
+    "ndo \r\nserenidad y profundidad en \r\nel rostro de Jesús.";
             // 
             // label2
             // 
