@@ -97,5 +97,11 @@ namespace ArteApp
             PaginaDeInicio2 paginaDeInicio2 = new PaginaDeInicio2(favoritosForm); 
             OpenChildForm(paginaDeInicio2);
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LeonardoDaVinci leonardoForm = new LeonardoDaVinci(this, favoritosForm);
+            OpenChildForm(leonardoForm);
+        }
     }
 }

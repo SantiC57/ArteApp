@@ -145,6 +145,12 @@ namespace ArteApp
         {
 
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LeonardoDaVinci leonardoForm = new LeonardoDaVinci(this, favoritosForm); 
+            OpenChildForm(leonardoForm);
+        }
     }
 }
 

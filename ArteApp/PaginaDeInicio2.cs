@@ -97,5 +97,11 @@ namespace ArteApp
             favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LeonardoDaVinci leonardoForm = new LeonardoDaVinci(this, favoritosForm);
+            OpenChildForm(leonardoForm);
+        }
     }
 }
