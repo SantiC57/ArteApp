@@ -53,5 +53,41 @@ namespace ArteApp
             paginaDeInicioOriginal.Show(); // Muestra el formulario original
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string artworkName = label12.Text;
+            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string artworkName = label2.Text;
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string artworkName = label12.Text;
+            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string artworkName = label2.Text;
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string artworkName = label12.Text;
+            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    
     }
 }

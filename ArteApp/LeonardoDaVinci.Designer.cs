@@ -120,7 +120,7 @@
             this.panel1.Location = new System.Drawing.Point(52, 191);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1331, 818);
+            this.panel1.Size = new System.Drawing.Size(1331, 593);
             this.panel1.TabIndex = 7;
             // 
             // groupBox6
@@ -162,6 +162,7 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "❤️";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label17
             // 
@@ -226,6 +227,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "❤️";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label10
             // 
@@ -314,6 +316,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "❤️";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label8
             // 
@@ -378,6 +381,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "❤️";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -466,6 +470,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "❤️";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label11
             // 
@@ -584,8 +589,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1422, 1038);
+            this.ClientSize = new System.Drawing.Size(1422, 808);
             this.Controls.Add(this.lblInicioSesion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button12);

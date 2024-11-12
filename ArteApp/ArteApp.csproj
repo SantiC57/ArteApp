@@ -100,6 +100,12 @@
   <ItemGroup>
     <Compile Include="Artista.cs" />
     <Compile Include="Cuadro.cs" />
+    <Compile Include="Edvard Munch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edvard Munch.Designer.cs">
+      <DependentUpon>Edvard Munch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Favoritos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,21 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sandro Botticelli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sandro Botticelli.Designer.cs">
+      <DependentUpon>Sandro Botticelli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vicent Van gogh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vicent Van gogh.Designer.cs">
+      <DependentUpon>Vicent Van gogh.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Edvard Munch.resx">
+      <DependentUpon>Edvard Munch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Favoritos.resx">
       <DependentUpon>Favoritos.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +204,12 @@
     </Compile>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sandro Botticelli.resx">
+      <DependentUpon>Sandro Botticelli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vicent Van gogh.resx">
+      <DependentUpon>Vicent Van gogh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
