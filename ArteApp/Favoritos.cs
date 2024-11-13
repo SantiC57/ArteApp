@@ -18,7 +18,9 @@ namespace ArteApp
         {
             InitializeComponent();
             InitializeGroupBoxes();
+            InitializeRecommendedSection();
         }
+    
 
         private void InitializeGroupBoxes()
         {
@@ -133,7 +135,153 @@ namespace ArteApp
             {
                 MessageBox.Show("No hay más espacio para favoritos.", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            // Generar y mostrar recomendaciones
+            GenerateRecommendations();
         }
+
+
+
+
+        private void InitializeRecommendedSection()
+        { 
+            // Inicializa los GroupBoxes y PictureBoxes para recomendados
+            recommendedGroupBox1.Visible = false; 
+            recommendedGroupBox2.Visible = false; 
+            recommendedGroupBox3.Visible = false; 
+            recommendedGroupBox4.Visible = false; 
+            recommendedGroupBox5.Visible = false; 
+            
+            recommendedPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; 
+            recommendedPictureBox2.SizeMode = PictureBoxSizeMode.StretchImage; 
+            recommendedPictureBox3.SizeMode = PictureBoxSizeMode.StretchImage; 
+            recommendedPictureBox4.SizeMode = PictureBoxSizeMode.StretchImage; 
+            recommendedPictureBox5.SizeMode = PictureBoxSizeMode.StretchImage; 
+        }
+        public void AddRecommended(List<(Image image, string name)> recommendedArtworks)
+        {
+            // Limpiar todas las recomendaciones actuales
+            recommendedPictureBox1.Image = null; recommendedLabel1.Text = string.Empty; recommendedGroupBox1.Visible = false;
+            recommendedPictureBox2.Image = null; recommendedLabel2.Text = string.Empty; recommendedGroupBox2.Visible = false;
+            recommendedPictureBox3.Image = null; recommendedLabel3.Text = string.Empty; recommendedGroupBox3.Visible = false;
+            recommendedPictureBox4.Image = null; recommendedLabel4.Text = string.Empty; recommendedGroupBox4.Visible = false;
+            recommendedPictureBox5.Image = null; recommendedLabel5.Text = string.Empty; recommendedGroupBox5.Visible = false;
+
+            // Añadir nuevas recomendaciones
+            if (recommendedArtworks.Count > 0)
+            {
+                recommendedPictureBox1.Image = recommendedArtworks[0].image;
+                recommendedLabel1.Text = recommendedArtworks[0].name;
+                recommendedGroupBox1.Visible = true;
+            }
+            if (recommendedArtworks.Count > 1)
+            {
+                recommendedPictureBox2.Image = recommendedArtworks[1].image;
+                recommendedLabel2.Text = recommendedArtworks[1].name;
+                recommendedGroupBox2.Visible = true;
+            }
+            if (recommendedArtworks.Count > 2)
+            {
+                recommendedPictureBox3.Image = recommendedArtworks[2].image;
+                recommendedLabel3.Text = recommendedArtworks[2].name;
+                recommendedGroupBox3.Visible = true;
+            }
+            if (recommendedArtworks.Count > 3)
+            {
+                recommendedPictureBox4.Image = recommendedArtworks[3].image;
+                recommendedLabel4.Text = recommendedArtworks[3].name;
+                recommendedGroupBox4.Visible = true;
+            }
+            if (recommendedArtworks.Count > 4)
+            {
+                recommendedPictureBox5.Image = recommendedArtworks[4].image;
+                recommendedLabel5.Text = recommendedArtworks[4].name;
+                recommendedGroupBox5.Visible = true;
+            }
+        }
+
+
+
+        private List<(Image image, string name)> GetSimilarArtworks(Image image)
+        {
+            // Aquí iría la lógica para obtener cuadros similares
+            // Por simplicidad, esto es solo un ejemplo con datos ficticios
+
+            // Crear una lista de cuadros similares ficticios
+            var similarArtworks = new List<(Image, string)>
+    {
+        (Properties.Resources.LaMonaLisa, "La mona lisa"),
+        (Properties.Resources.LaNocheEstrellada, "La noche estrellada"),
+        (Properties.Resources.ElGrito, "El grito"),
+        (Properties.Resources.LaUltimaCena, "La ultima cena"),
+        (Properties.Resources.images, "El nacimiento de venus"),
+        (Properties.Resources.LosComederosDePatatas, "Los comederos de patatas"),
+        (Properties.Resources.El_Hombre_de_Vitruvio, "El hombre de vitruvio"),
+        (Properties.Resources.Los_girasoles, "Los girasoles"),
+        (Properties.Resources.La_niña_enferma, "La niña enferma"),
+        (Properties.Resources.El_Bautismo_de_Cristo, "El bautismo de cristo"),
+        (Properties.Resources.La_adoración_de_los_Reyes_Magos, "La adoracion de los reyes magos"),
+        (Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete, "Autorretrato con la oreha vendada y caballete"),
+        (Properties.Resources.Salvator_Mundi, "Salvador mundi"),
+        (Properties.Resources.Noche_estrellada_sobre_el_Ródano, "Noche estrellada sobre el rodano"),
+        (Properties.Resources.Madonna, "Madonna"),
+        (Properties.Resources.Dama_con_un_Armino, "Dama con un arminio"),
+        (Properties.Resources.Palas_y_el_Centauro, "Palas y el centauro"),
+        (Properties.Resources.La_casa_amarilla, "La casa amarilla")
+    };
+
+            // Retornar la lista de cuadros similares ficticios
+            return similarArtworks;
+        }
+
+        private List<(Image image, string name)> GetFavorites()
+        {
+            List<(Image, string)> favorites = new List<(Image, string)>();
+
+            if (pictureBox1.Image != null) favorites.Add((pictureBox1.Image, label1.Text));
+            if (pictureBox2.Image != null) favorites.Add((pictureBox2.Image, label2.Text));
+            if (pictureBox3.Image != null) favorites.Add((pictureBox3.Image, label3.Text));
+            if (pictureBox4.Image != null) favorites.Add((pictureBox4.Image, label4.Text));
+            if (pictureBox5.Image != null) favorites.Add((pictureBox5.Image, label5.Text));
+            if (pictureBox6.Image != null) favorites.Add((pictureBox6.Image, label6.Text));
+            if (pictureBox7.Image != null) favorites.Add((pictureBox7.Image, label7.Text));
+            if (pictureBox8.Image != null) favorites.Add((pictureBox8.Image, label8.Text));
+            if (pictureBox9.Image != null) favorites.Add((pictureBox9.Image, label9.Text));
+            if (pictureBox10.Image != null) favorites.Add((pictureBox10.Image, label10.Text));
+            if (pictureBox11.Image != null) favorites.Add((pictureBox11.Image, label11.Text));
+            if (pictureBox12.Image != null) favorites.Add((pictureBox12.Image, label12.Text));
+
+            return favorites;
+        }
+        private void GenerateRecommendations()
+        {
+            List<(Image image, string name)> recommendedArtworks = new List<(Image, string)>();
+
+            foreach (var favorite in GetFavorites())
+            {
+                var similarArtworks = GetSimilarArtworks(favorite.image);
+                foreach (var artwork in similarArtworks)
+                {
+                    if (!IsImageAlreadyAdded(artwork.image) && !recommendedArtworks.Any(x => CompareImages(x.image, artwork.image)))
+                    {
+                        recommendedArtworks.Add(artwork);
+                    }
+                }
+            }
+
+            // Asegurarse de no agregar duplicados
+            recommendedArtworks = recommendedArtworks.Distinct().ToList();
+
+            // Añadir las nuevas recomendaciones
+            AddRecommended(recommendedArtworks.Take(5).ToList());
+        }
+
+
+
+
+
+
+
 
         private bool IsImageAlreadyAdded(Image image)
         {
@@ -264,8 +412,14 @@ namespace ArteApp
             pictureBox.Image = null;
             label.Text = string.Empty;
             groupBox.Visible = false;
+
+            // Reorganizar favoritos
             ReorganizeFavorites();
+
+            // Generar y mostrar recomendaciones
+            GenerateRecommendations();
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

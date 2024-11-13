@@ -81,6 +81,22 @@
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.recommendedGroupBox1 = new System.Windows.Forms.GroupBox();
+            this.recommendedGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.recommendedGroupBox3 = new System.Windows.Forms.GroupBox();
+            this.recommendedGroupBox4 = new System.Windows.Forms.GroupBox();
+            this.recommendedGroupBox5 = new System.Windows.Forms.GroupBox();
+            this.recommendedPictureBox1 = new System.Windows.Forms.PictureBox();
+            this.recommendedPictureBox2 = new System.Windows.Forms.PictureBox();
+            this.recommendedPictureBox3 = new System.Windows.Forms.PictureBox();
+            this.recommendedPictureBox4 = new System.Windows.Forms.PictureBox();
+            this.recommendedPictureBox5 = new System.Windows.Forms.PictureBox();
+            this.recommendedLabel1 = new System.Windows.Forms.Label();
+            this.recommendedLabel3 = new System.Windows.Forms.Label();
+            this.recommendedLabel2 = new System.Windows.Forms.Label();
+            this.recommendedLabel4 = new System.Windows.Forms.Label();
+            this.recommendedLabel5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -109,6 +125,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.recommendedGroupBox1.SuspendLayout();
+            this.recommendedGroupBox2.SuspendLayout();
+            this.recommendedGroupBox3.SuspendLayout();
+            this.recommendedGroupBox4.SuspendLayout();
+            this.recommendedGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -130,10 +156,10 @@
             this.panel1.Controls.Add(this.pictureBox15);
             this.panel1.Controls.Add(this.pictureBox14);
             this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Location = new System.Drawing.Point(12, 11);
+            this.panel1.Location = new System.Drawing.Point(12, 160);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1387, 649);
+            this.panel1.Size = new System.Drawing.Size(1387, 500);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -707,12 +733,175 @@
             this.pictureBox13.TabIndex = 2;
             this.pictureBox13.TabStop = false;
             // 
+            // recommendedGroupBox1
+            // 
+            this.recommendedGroupBox1.Controls.Add(this.recommendedLabel1);
+            this.recommendedGroupBox1.Controls.Add(this.recommendedPictureBox1);
+            this.recommendedGroupBox1.Location = new System.Drawing.Point(55, 48);
+            this.recommendedGroupBox1.Name = "recommendedGroupBox1";
+            this.recommendedGroupBox1.Size = new System.Drawing.Size(209, 81);
+            this.recommendedGroupBox1.TabIndex = 1;
+            this.recommendedGroupBox1.TabStop = false;
+            this.recommendedGroupBox1.Text = "groupBox13";
+            // 
+            // recommendedGroupBox2
+            // 
+            this.recommendedGroupBox2.Controls.Add(this.recommendedLabel2);
+            this.recommendedGroupBox2.Controls.Add(this.recommendedPictureBox2);
+            this.recommendedGroupBox2.Location = new System.Drawing.Point(319, 48);
+            this.recommendedGroupBox2.Name = "recommendedGroupBox2";
+            this.recommendedGroupBox2.Size = new System.Drawing.Size(209, 81);
+            this.recommendedGroupBox2.TabIndex = 2;
+            this.recommendedGroupBox2.TabStop = false;
+            this.recommendedGroupBox2.Text = "groupBox14";
+            // 
+            // recommendedGroupBox3
+            // 
+            this.recommendedGroupBox3.Controls.Add(this.recommendedLabel3);
+            this.recommendedGroupBox3.Controls.Add(this.recommendedPictureBox3);
+            this.recommendedGroupBox3.Location = new System.Drawing.Point(584, 48);
+            this.recommendedGroupBox3.Name = "recommendedGroupBox3";
+            this.recommendedGroupBox3.Size = new System.Drawing.Size(209, 81);
+            this.recommendedGroupBox3.TabIndex = 2;
+            this.recommendedGroupBox3.TabStop = false;
+            this.recommendedGroupBox3.Text = "groupBox15";
+            // 
+            // recommendedGroupBox4
+            // 
+            this.recommendedGroupBox4.Controls.Add(this.recommendedLabel4);
+            this.recommendedGroupBox4.Controls.Add(this.recommendedPictureBox4);
+            this.recommendedGroupBox4.Location = new System.Drawing.Point(859, 48);
+            this.recommendedGroupBox4.Name = "recommendedGroupBox4";
+            this.recommendedGroupBox4.Size = new System.Drawing.Size(209, 81);
+            this.recommendedGroupBox4.TabIndex = 2;
+            this.recommendedGroupBox4.TabStop = false;
+            this.recommendedGroupBox4.Text = "groupBox16";
+            // 
+            // recommendedGroupBox5
+            // 
+            this.recommendedGroupBox5.Controls.Add(this.recommendedLabel5);
+            this.recommendedGroupBox5.Controls.Add(this.recommendedPictureBox5);
+            this.recommendedGroupBox5.Location = new System.Drawing.Point(1133, 48);
+            this.recommendedGroupBox5.Name = "recommendedGroupBox5";
+            this.recommendedGroupBox5.Size = new System.Drawing.Size(209, 81);
+            this.recommendedGroupBox5.TabIndex = 2;
+            this.recommendedGroupBox5.TabStop = false;
+            this.recommendedGroupBox5.Text = "groupBox17";
+            // 
+            // recommendedPictureBox1
+            // 
+            this.recommendedPictureBox1.Location = new System.Drawing.Point(7, 15);
+            this.recommendedPictureBox1.Name = "recommendedPictureBox1";
+            this.recommendedPictureBox1.Size = new System.Drawing.Size(81, 60);
+            this.recommendedPictureBox1.TabIndex = 0;
+            this.recommendedPictureBox1.TabStop = false;
+            // 
+            // recommendedPictureBox2
+            // 
+            this.recommendedPictureBox2.Location = new System.Drawing.Point(6, 15);
+            this.recommendedPictureBox2.Name = "recommendedPictureBox2";
+            this.recommendedPictureBox2.Size = new System.Drawing.Size(81, 60);
+            this.recommendedPictureBox2.TabIndex = 1;
+            this.recommendedPictureBox2.TabStop = false;
+            // 
+            // recommendedPictureBox3
+            // 
+            this.recommendedPictureBox3.Location = new System.Drawing.Point(6, 15);
+            this.recommendedPictureBox3.Name = "recommendedPictureBox3";
+            this.recommendedPictureBox3.Size = new System.Drawing.Size(81, 60);
+            this.recommendedPictureBox3.TabIndex = 2;
+            this.recommendedPictureBox3.TabStop = false;
+            // 
+            // recommendedPictureBox4
+            // 
+            this.recommendedPictureBox4.Location = new System.Drawing.Point(6, 15);
+            this.recommendedPictureBox4.Name = "recommendedPictureBox4";
+            this.recommendedPictureBox4.Size = new System.Drawing.Size(81, 60);
+            this.recommendedPictureBox4.TabIndex = 3;
+            this.recommendedPictureBox4.TabStop = false;
+            // 
+            // recommendedPictureBox5
+            // 
+            this.recommendedPictureBox5.Location = new System.Drawing.Point(6, 15);
+            this.recommendedPictureBox5.Name = "recommendedPictureBox5";
+            this.recommendedPictureBox5.Size = new System.Drawing.Size(81, 60);
+            this.recommendedPictureBox5.TabIndex = 4;
+            this.recommendedPictureBox5.TabStop = false;
+            // 
+            // recommendedLabel1
+            // 
+            this.recommendedLabel1.AutoSize = true;
+            this.recommendedLabel1.BackColor = System.Drawing.Color.Black;
+            this.recommendedLabel1.ForeColor = System.Drawing.Color.White;
+            this.recommendedLabel1.Location = new System.Drawing.Point(94, 37);
+            this.recommendedLabel1.Name = "recommendedLabel1";
+            this.recommendedLabel1.Size = new System.Drawing.Size(51, 16);
+            this.recommendedLabel1.TabIndex = 2;
+            this.recommendedLabel1.Text = "label13";
+            // 
+            // recommendedLabel3
+            // 
+            this.recommendedLabel3.AutoSize = true;
+            this.recommendedLabel3.ForeColor = System.Drawing.Color.White;
+            this.recommendedLabel3.Location = new System.Drawing.Point(93, 37);
+            this.recommendedLabel3.Name = "recommendedLabel3";
+            this.recommendedLabel3.Size = new System.Drawing.Size(51, 16);
+            this.recommendedLabel3.TabIndex = 3;
+            this.recommendedLabel3.Text = "label14";
+            // 
+            // recommendedLabel2
+            // 
+            this.recommendedLabel2.AutoSize = true;
+            this.recommendedLabel2.ForeColor = System.Drawing.Color.White;
+            this.recommendedLabel2.Location = new System.Drawing.Point(90, 37);
+            this.recommendedLabel2.Name = "recommendedLabel2";
+            this.recommendedLabel2.Size = new System.Drawing.Size(51, 16);
+            this.recommendedLabel2.TabIndex = 3;
+            this.recommendedLabel2.Text = "label15";
+            // 
+            // recommendedLabel4
+            // 
+            this.recommendedLabel4.AutoSize = true;
+            this.recommendedLabel4.ForeColor = System.Drawing.Color.White;
+            this.recommendedLabel4.Location = new System.Drawing.Point(93, 37);
+            this.recommendedLabel4.Name = "recommendedLabel4";
+            this.recommendedLabel4.Size = new System.Drawing.Size(51, 16);
+            this.recommendedLabel4.TabIndex = 4;
+            this.recommendedLabel4.Text = "label16";
+            // 
+            // recommendedLabel5
+            // 
+            this.recommendedLabel5.AutoSize = true;
+            this.recommendedLabel5.ForeColor = System.Drawing.Color.White;
+            this.recommendedLabel5.Location = new System.Drawing.Point(93, 37);
+            this.recommendedLabel5.Name = "recommendedLabel5";
+            this.recommendedLabel5.Size = new System.Drawing.Size(51, 16);
+            this.recommendedLabel5.TabIndex = 5;
+            this.recommendedLabel5.Text = "label17";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Black;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(55, 11);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(128, 22);
+            this.textBox2.TabIndex = 33;
+            this.textBox2.Text = "RECOMENDADOS";
+            // 
             // Favoritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1371, 672);
+            this.ClientSize = new System.Drawing.Size(1423, 692);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.recommendedGroupBox5);
+            this.Controls.Add(this.recommendedGroupBox4);
+            this.Controls.Add(this.recommendedGroupBox3);
+            this.Controls.Add(this.recommendedGroupBox2);
+            this.Controls.Add(this.recommendedGroupBox1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Favoritos";
@@ -760,7 +949,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.recommendedGroupBox1.ResumeLayout(false);
+            this.recommendedGroupBox1.PerformLayout();
+            this.recommendedGroupBox2.ResumeLayout(false);
+            this.recommendedGroupBox2.PerformLayout();
+            this.recommendedGroupBox3.ResumeLayout(false);
+            this.recommendedGroupBox3.PerformLayout();
+            this.recommendedGroupBox4.ResumeLayout(false);
+            this.recommendedGroupBox4.PerformLayout();
+            this.recommendedGroupBox5.ResumeLayout(false);
+            this.recommendedGroupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedPictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -819,5 +1024,21 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.GroupBox recommendedGroupBox1;
+        private System.Windows.Forms.GroupBox recommendedGroupBox2;
+        private System.Windows.Forms.GroupBox recommendedGroupBox3;
+        private System.Windows.Forms.GroupBox recommendedGroupBox4;
+        private System.Windows.Forms.Label recommendedLabel1;
+        private System.Windows.Forms.PictureBox recommendedPictureBox1;
+        private System.Windows.Forms.Label recommendedLabel2;
+        private System.Windows.Forms.PictureBox recommendedPictureBox2;
+        private System.Windows.Forms.Label recommendedLabel3;
+        private System.Windows.Forms.PictureBox recommendedPictureBox3;
+        private System.Windows.Forms.Label recommendedLabel4;
+        private System.Windows.Forms.PictureBox recommendedPictureBox4;
+        private System.Windows.Forms.GroupBox recommendedGroupBox5;
+        private System.Windows.Forms.Label recommendedLabel5;
+        private System.Windows.Forms.PictureBox recommendedPictureBox5;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
