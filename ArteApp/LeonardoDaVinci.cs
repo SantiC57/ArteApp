@@ -63,29 +63,29 @@ namespace ArteApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string artworkName = label2.Text;
-            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+            string artworkName = label5.Text;
+            favoritosForm.AddFavorite(pictureBox2.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string artworkName = label12.Text;
-            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            string artworkName = label9.Text;
+            favoritosForm.AddFavorite(pictureBox3.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string artworkName = label2.Text;
-            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+            string artworkName = label14.Text;
+            favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string artworkName = label12.Text;
-            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
+            string artworkName = label18.Text;
+            favoritosForm.AddFavorite(pictureBox6.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     

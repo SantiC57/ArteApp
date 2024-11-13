@@ -115,6 +115,7 @@
             this.button15.TabIndex = 14;
             this.button15.Text = "Sandro botticelli";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button14
             // 
@@ -127,6 +128,7 @@
             this.button14.TabIndex = 13;
             this.button14.Text = "Edvard Munch";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
             // button13
             // 
@@ -139,6 +141,7 @@
             this.button13.TabIndex = 12;
             this.button13.Text = "Vicent Van Gogh";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button12
             // 

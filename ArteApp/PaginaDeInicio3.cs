@@ -103,5 +103,25 @@ namespace ArteApp
             LeonardoDaVinci leonardoForm = new LeonardoDaVinci(this, favoritosForm);
             OpenChildForm(leonardoForm);
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Vicent_Van_gogh vanGoghForm = new Vicent_Van_gogh(this, favoritosForm);
+            OpenChildForm(vanGoghForm);
+        }
+
+     
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            Edvard_Munch munchForm = new Edvard_Munch(this, favoritosForm);
+            OpenChildForm(munchForm);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Sandro_Botticelli botticelliForm = new Sandro_Botticelli(this, favoritosForm);
+            OpenChildForm(botticelliForm);
+        }
     }
 }

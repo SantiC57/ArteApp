@@ -12,9 +12,55 @@ namespace ArteApp
 {
     public partial class Edvard_Munch : Form
     {
-        public Edvard_Munch()
+        private Favoritos favoritosForm;
+        private Form paginaDeInicioOriginal;
+        private Form activeForm = null;
+        public Edvard_Munch(Form paginaDeInicio, Favoritos formFavoritos)
         {
             InitializeComponent();
+            this.favoritosForm = formFavoritos;
+            this.paginaDeInicioOriginal = paginaDeInicio;
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(childForm);
+            this.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string artworkName = label8.Text;
+            favoritosForm.AddFavorite(pictureBox3.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string artworkName = label2.Text;
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string artworkName = label5.Text;
+            favoritosForm.AddFavorite(pictureBox2.Image, artworkName);
+            MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            paginaDeInicioOriginal.Show(); // Muestra el formulario original
+            this.Close();
         }
     }
-}
+    }
