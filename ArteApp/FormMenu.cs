@@ -195,7 +195,7 @@ namespace ArteApp
              if (favoritosForm != null && !favoritosForm.Visible)
              {
                 favoritosForm.Show();  // Muestra el formulario si estaba oculto
-              }
+             }
             
             OpenChildForm(favoritosForm, sender);
             }

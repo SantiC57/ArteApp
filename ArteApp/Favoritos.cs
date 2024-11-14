@@ -40,7 +40,7 @@ namespace ArteApp
 
         }
 
-        
+
 
 
         public void AddFavorite(Image image, string name, int indiceImagen)
@@ -56,6 +56,7 @@ namespace ArteApp
                 pictureBox1.Image = image;
                 label1.Text = name;
                 groupBox1.Visible = true;
+                
             }
             else if (pictureBox2.Image == null)
             {
@@ -128,15 +129,15 @@ namespace ArteApp
                 MessageBox.Show("No hay más espacio para favoritos.", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-           
-                EjecutarBFS(indiceImagen);
+            
+            EjecutarBFS(indiceImagen);
             
         }
 
         private List<Image> imagenes = new List<Image>
         {
-                                Resources.LaMonaLisa,
-                               Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
+                    Properties.Resources.LaMonaLisa,
+                    Properties.Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
                     Properties.Resources.LaNocheEstrellada,
                     Properties.Resources.LaUltimaCena,
                     Properties.Resources.LosComederosDePatatas,
@@ -230,7 +231,7 @@ namespace ArteApp
             List<Image> imagenesRecomendadas = new List<Image>();
             for (int i = 0; i < imagenes.Count; i++)
             {
-                if (pasos[i] <= 2) // Si los pasos son 2 o menos, agregar la imagen
+                if (pasos[i] >= 1 && pasos[i] <= 2) // Si los pasos son 2 o menos, agregar la imagen
                 {
                     imagenesRecomendadas.Add(imagenes[i]);
                 }
@@ -247,7 +248,8 @@ namespace ArteApp
 
         private void MostrarImagenesRecomendadas(List<int> imagenesRecomendadas, List<Image> imagenes, List<string> nombresImagenes)
         {
-            // Asumimos que recommendedPictureBox1, recommendedPictureBox2, etc. y sus respectivos labels están en el formulario
+            // Asumimos que recommendedGroupBox1, recommendedGroupBox2, etc. están en el formulario
+            System.Windows.Forms.GroupBox[] groups = { recommendedGroupBox1, recommendedGroupBox2, recommendedGroupBox3, recommendedGroupBox4, recommendedGroupBox5 };
             PictureBox[] pictureBoxes = { recommendedPictureBox1, recommendedPictureBox2, recommendedPictureBox3, recommendedPictureBox4, recommendedPictureBox5 };
             Label[] labels = { recommendedLabel1, recommendedLabel2, recommendedLabel3, recommendedLabel4, recommendedLabel5 };
 
@@ -255,21 +257,22 @@ namespace ArteApp
             {
                 if (i < imagenesRecomendadas.Count)
                 {
-                    // Aquí cargamos la imagen
+                    
                     pictureBoxes[i].Image = imagenes[imagenesRecomendadas[i]];
-                    pictureBoxes[i].Visible = true;
 
-                    // Aquí actualizamos el texto del label con el nombre de la imagen
                     labels[i].Text = nombresImagenes[imagenesRecomendadas[i]];
-                    labels[i].Visible = true;
+
+                    groups[i].Visible = true;
                 }
+
                 else
                 {
-                    pictureBoxes[i].Visible = false;
-                    labels[i].Visible = false;
+ 
+                    groups[i].Visible = false;
                 }
             }
         }
+
 
 
 
