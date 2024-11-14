@@ -28,7 +28,8 @@ namespace ArteApp
 
         private void InicioSesion_Load(object sender, EventArgs e)
         {
-
+            txtUsuarioIS.Select();
+            txtUsuarioIS.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,5 +79,19 @@ namespace ArteApp
             }
         }
 
+        private void txtUsuarioIS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuarioIS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                mskConstraseñaIS.Select();
+                mskConstraseñaIS.Clear();
+                e.Handled = true;
+            }
+        }
     }
 }

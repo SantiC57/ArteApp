@@ -116,6 +116,8 @@
             this.txtUsuarioIS.Size = new System.Drawing.Size(187, 20);
             this.txtUsuarioIS.TabIndex = 6;
             this.txtUsuarioIS.Text = "Usuario";
+            this.txtUsuarioIS.TextChanged += new System.EventHandler(this.txtUsuarioIS_TextChanged);
+            this.txtUsuarioIS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuarioIS_KeyPress);
             // 
             // panel2
             // 
