@@ -44,6 +44,8 @@
             this.btnRegistro = new System.Windows.Forms.Button();
             this.chkContraseña = new System.Windows.Forms.CheckBox();
             this.chkCnfrC = new System.Windows.Forms.CheckBox();
+            this.lblIngresaUsuario = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,7 +90,7 @@
             // 
             this.lblRgis.AutoSize = true;
             this.lblRgis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRgis.Location = new System.Drawing.Point(71, 102);
+            this.lblRgis.Location = new System.Drawing.Point(71, 92);
             this.lblRgis.Name = "lblRgis";
             this.lblRgis.Size = new System.Drawing.Size(197, 38);
             this.lblRgis.TabIndex = 3;
@@ -135,7 +137,6 @@
             this.txtU.Name = "txtU";
             this.txtU.Size = new System.Drawing.Size(172, 23);
             this.txtU.TabIndex = 8;
-            this.txtU.Text = "Usuario";
             // 
             // mskContraseñaR
             // 
@@ -219,12 +220,34 @@
             this.chkCnfrC.UseVisualStyleBackColor = true;
             this.chkCnfrC.CheckedChanged += new System.EventHandler(this.chkCnfrC_CheckedChanged);
             // 
+            // lblIngresaUsuario
+            // 
+            this.lblIngresaUsuario.AutoSize = true;
+            this.lblIngresaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresaUsuario.Location = new System.Drawing.Point(62, 147);
+            this.lblIngresaUsuario.Name = "lblIngresaUsuario";
+            this.lblIngresaUsuario.Size = new System.Drawing.Size(86, 25);
+            this.lblIngresaUsuario.TabIndex = 17;
+            this.lblIngresaUsuario.Text = "Usuario";
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseña.Location = new System.Drawing.Point(62, 253);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(124, 25);
+            this.lblContraseña.TabIndex = 18;
+            this.lblContraseña.Text = "Contraseña";
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(346, 608);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblIngresaUsuario);
             this.Controls.Add(this.chkCnfrC);
             this.Controls.Add(this.chkContraseña);
             this.Controls.Add(this.btnRegistro);
@@ -273,5 +296,7 @@
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.CheckBox chkContraseña;
         private System.Windows.Forms.CheckBox chkCnfrC;
+        private System.Windows.Forms.Label lblIngresaUsuario;
+        private System.Windows.Forms.Label lblContraseña;
     }
 }
