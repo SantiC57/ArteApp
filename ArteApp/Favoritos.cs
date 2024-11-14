@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ArteApp.Properties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +20,8 @@ namespace ArteApp
         {
             InitializeComponent();
             InitializeGroupBoxes();
-            InitializeRecommendedSection();
         }
-    
+
 
         private void InitializeGroupBoxes()
         {
@@ -37,21 +38,12 @@ namespace ArteApp
             groupBox11.Visible = false;
             groupBox12.Visible = false;
 
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        public void AddFavorite(Image image, string name)
+        
+
+
+        public void AddFavorite(Image image, string name, int indiceImagen)
         {
             if (IsImageAlreadyAdded(image))
             {
@@ -136,103 +128,151 @@ namespace ArteApp
                 MessageBox.Show("No hay más espacio para favoritos.", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            // Generar y mostrar recomendaciones
-            GenerateRecommendations();
-        }
-
-
-
-
-        private void InitializeRecommendedSection()
-        { 
-            // Inicializa los GroupBoxes y PictureBoxes para recomendados
-            recommendedGroupBox1.Visible = false; 
-            recommendedGroupBox2.Visible = false; 
-            recommendedGroupBox3.Visible = false; 
-            recommendedGroupBox4.Visible = false; 
-            recommendedGroupBox5.Visible = false; 
+           
+                EjecutarBFS(indiceImagen);
             
-            recommendedPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; 
-            recommendedPictureBox2.SizeMode = PictureBoxSizeMode.StretchImage; 
-            recommendedPictureBox3.SizeMode = PictureBoxSizeMode.StretchImage; 
-            recommendedPictureBox4.SizeMode = PictureBoxSizeMode.StretchImage; 
-            recommendedPictureBox5.SizeMode = PictureBoxSizeMode.StretchImage; 
         }
-        public void AddRecommended(List<(Image image, string name)> recommendedArtworks)
+
+        private List<Image> imagenes = new List<Image>
         {
-            // Limpiar todas las recomendaciones actuales
-            recommendedPictureBox1.Image = null; recommendedLabel1.Text = string.Empty; recommendedGroupBox1.Visible = false;
-            recommendedPictureBox2.Image = null; recommendedLabel2.Text = string.Empty; recommendedGroupBox2.Visible = false;
-            recommendedPictureBox3.Image = null; recommendedLabel3.Text = string.Empty; recommendedGroupBox3.Visible = false;
-            recommendedPictureBox4.Image = null; recommendedLabel4.Text = string.Empty; recommendedGroupBox4.Visible = false;
-            recommendedPictureBox5.Image = null; recommendedLabel5.Text = string.Empty; recommendedGroupBox5.Visible = false;
+                                Resources.LaMonaLisa,
+                               Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
+                    Properties.Resources.LaNocheEstrellada,
+                    Properties.Resources.LaUltimaCena,
+                    Properties.Resources.LosComederosDePatatas,
+                    Properties.Resources.LaMonaLisa,
+                    Properties.Resources.images,
+                    Properties.Resources.El_Hombre_de_Vitruvio,
+                    Properties.Resources.Los_girasoles,
+                    Properties.Resources.La_niña_enferma,
+                    Properties.Resources.El_Bautismo_de_Cristo,
+                    Properties.Resources.La_adoración_de_los_Reyes_Magos,
+                    Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete,
+                    Properties.Resources.Salvator_Mundi,
+                    Properties.Resources.Noche_estrellada_sobre_el_Ródano,
+                    Properties.Resources.Madonna,
+                    Properties.Resources.Dama_con_un_Armino,
+                    Properties.Resources.Palas_y_el_Centauro,
+                    Properties.Resources.La_casa_amarilla
+        };
 
-            // Añadir nuevas recomendaciones
-            if (recommendedArtworks.Count > 0)
-            {
-                recommendedPictureBox1.Image = recommendedArtworks[0].image;
-                recommendedLabel1.Text = recommendedArtworks[0].name;
-                recommendedGroupBox1.Visible = true;
-            }
-            if (recommendedArtworks.Count > 1)
-            {
-                recommendedPictureBox2.Image = recommendedArtworks[1].image;
-                recommendedLabel2.Text = recommendedArtworks[1].name;
-                recommendedGroupBox2.Visible = true;
-            }
-            if (recommendedArtworks.Count > 2)
-            {
-                recommendedPictureBox3.Image = recommendedArtworks[2].image;
-                recommendedLabel3.Text = recommendedArtworks[2].name;
-                recommendedGroupBox3.Visible = true;
-            }
-            if (recommendedArtworks.Count > 3)
-            {
-                recommendedPictureBox4.Image = recommendedArtworks[3].image;
-                recommendedLabel4.Text = recommendedArtworks[3].name;
-                recommendedGroupBox4.Visible = true;
-            }
-            if (recommendedArtworks.Count > 4)
-            {
-                recommendedPictureBox5.Image = recommendedArtworks[4].image;
-                recommendedLabel5.Text = recommendedArtworks[4].name;
-                recommendedGroupBox5.Visible = true;
-            }
-        }
+        // Grafo de relaciones entre obras de arte
+        private Dictionary<int, List<int>> grafo = new Dictionary<int, List<int>>
+{
+    { 0, new List<int> { 1, 3 } },
+    { 1, new List<int> { 0, 2, 7 } },
+    { 2, new List<int> { 1, 4, 5 } },
+    { 3, new List<int> { 0, 6, 12 } },
+    { 4, new List<int> { 2, 5, 14 } },
+    { 5, new List<int> { 2, 4, 9 } },
+    { 6, new List<int> { 3, 12 } },
+    { 7, new List<int> { 1, 13 } },
+    { 8, new List<int> { 10, 11 } },
+    { 9, new List<int> { 5, 11 } },
+    { 10, new List<int> { 8, 15 } },
+    { 11, new List<int> { 8, 9, 16 } },
+    { 12, new List<int> { 3, 6 } },
+    { 13, new List<int> { 7, 14 } },
+    { 14, new List<int> { 4, 13 } },
+    { 15, new List<int> { 10 } },
+    { 16, new List<int> { 11, 17 } },
+    { 17, new List<int> { 16 } }
+};
 
+        List<string> nombresImagenes = new List<string>
+{
+    "LaMonaLisa",
+    "ElGrito",
+    "LaNocheEstrellada",
+    "LaUltimaCena",
+    "LosComederosDePatatas",
+    "LaMonaLisa",
+    "NacimientodeVenus",
+    "ElHombreDeVitruvio",
+    "LosGirasoles",
+    "LaNiñaEnferma",
+    "ElBautismoDeCristo",
+    "LosReyesMagos",
+    "LaOrejaVendada",
+    "SalvatorMundi",
+    "ElRódano",
+    "Madonna",
+    "DamaConUnArmino",
+    "PalasYElCentauro",
+    "LaCasaAmarilla"
+};
 
-
-        private List<(Image image, string name)> GetSimilarArtworks(Image image)
+        private void EjecutarBFS(int nodoInicial)
         {
-            // Aquí iría la lógica para obtener cuadros similares
-            // Por simplicidad, esto es solo un ejemplo con datos ficticios
+            Queue<int> cola = new Queue<int>();
+            bool[] visitados = new bool[imagenes.Count];
+            int[] pasos = new int[imagenes.Count];
+            cola.Enqueue(nodoInicial);
+            visitados[nodoInicial] = true;
 
-            // Crear una lista de cuadros similares ficticios
-            var similarArtworks = new List<(Image, string)>
-    {
-        (Properties.Resources.LaMonaLisa, "La mona lisa"),
-        (Properties.Resources.LaNocheEstrellada, "La noche estrellada"),
-        (Properties.Resources.ElGrito, "El grito"),
-        (Properties.Resources.LaUltimaCena, "La ultima cena"),
-        (Properties.Resources.images, "El nacimiento de venus"),
-        (Properties.Resources.LosComederosDePatatas, "Los comederos de patatas"),
-        (Properties.Resources.El_Hombre_de_Vitruvio, "El hombre de vitruvio"),
-        (Properties.Resources.Los_girasoles, "Los girasoles"),
-        (Properties.Resources.La_niña_enferma, "La niña enferma"),
-        (Properties.Resources.El_Bautismo_de_Cristo, "El bautismo de cristo"),
-        (Properties.Resources.La_adoración_de_los_Reyes_Magos, "La adoracion de los reyes magos"),
-        (Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete, "Autorretrato con la oreha vendada y caballete"),
-        (Properties.Resources.Salvator_Mundi, "Salvador mundi"),
-        (Properties.Resources.Noche_estrellada_sobre_el_Ródano, "Noche estrellada sobre el rodano"),
-        (Properties.Resources.Madonna, "Madonna"),
-        (Properties.Resources.Dama_con_un_Armino, "Dama con un arminio"),
-        (Properties.Resources.Palas_y_el_Centauro, "Palas y el centauro"),
-        (Properties.Resources.La_casa_amarilla, "La casa amarilla")
-    };
+            // Recorrido BFS
+            while (cola.Count > 0)
+            {
+                int nodoActual = cola.Dequeue();
 
-            // Retornar la lista de cuadros similares ficticios
-            return similarArtworks;
+                foreach (int vecino in grafo[nodoActual])
+                {
+                    if (!visitados[vecino])
+                    {
+                        visitados[vecino] = true;
+                        cola.Enqueue(vecino);
+                        pasos[vecino] = pasos[nodoActual] + 1;
+                    }
+                }
+            }
+
+            // Recorrer las imágenes recomendadas
+            List<Image> imagenesRecomendadas = new List<Image>();
+            for (int i = 0; i < imagenes.Count; i++)
+            {
+                if (pasos[i] <= 2) // Si los pasos son 2 o menos, agregar la imagen
+                {
+                    imagenesRecomendadas.Add(imagenes[i]);
+                }
+            }
+
+            // Mostrar las imágenes recomendadas en los PictureBox
+            MostrarImagenesRecomendadas(imagenesRecomendadas, imagenes, nombresImagenes);
         }
+
+        private void MostrarImagenesRecomendadas(List<Image> imagenesRecomendadas, List<Image> imagenes, List<string> nombresImagenes)
+        {
+            MostrarImagenesRecomendadas(imagenesRecomendadas.Select(imagen => imagenes.IndexOf(imagen)).ToList(), imagenes, nombresImagenes);
+        }
+
+        private void MostrarImagenesRecomendadas(List<int> imagenesRecomendadas, List<Image> imagenes, List<string> nombresImagenes)
+        {
+            // Asumimos que recommendedPictureBox1, recommendedPictureBox2, etc. y sus respectivos labels están en el formulario
+            PictureBox[] pictureBoxes = { recommendedPictureBox1, recommendedPictureBox2, recommendedPictureBox3, recommendedPictureBox4, recommendedPictureBox5 };
+            Label[] labels = { recommendedLabel1, recommendedLabel2, recommendedLabel3, recommendedLabel4, recommendedLabel5 };
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                if (i < imagenesRecomendadas.Count)
+                {
+                    // Aquí cargamos la imagen
+                    pictureBoxes[i].Image = imagenes[imagenesRecomendadas[i]];
+                    pictureBoxes[i].Visible = true;
+
+                    // Aquí actualizamos el texto del label con el nombre de la imagen
+                    labels[i].Text = nombresImagenes[imagenesRecomendadas[i]];
+                    labels[i].Visible = true;
+                }
+                else
+                {
+                    pictureBoxes[i].Visible = false;
+                    labels[i].Visible = false;
+                }
+            }
+        }
+
+
+
 
         private List<(Image image, string name)> GetFavorites()
         {
@@ -253,34 +293,7 @@ namespace ArteApp
 
             return favorites;
         }
-        private void GenerateRecommendations()
-        {
-            List<(Image image, string name)> recommendedArtworks = new List<(Image, string)>();
-
-            foreach (var favorite in GetFavorites())
-            {
-                var similarArtworks = GetSimilarArtworks(favorite.image);
-                foreach (var artwork in similarArtworks)
-                {
-                    if (!IsImageAlreadyAdded(artwork.image) && !recommendedArtworks.Any(x => CompareImages(x.image, artwork.image)))
-                    {
-                        recommendedArtworks.Add(artwork);
-                    }
-                }
-            }
-
-            // Asegurarse de no agregar duplicados
-            recommendedArtworks = recommendedArtworks.Distinct().ToList();
-
-            // Añadir las nuevas recomendaciones
-            AddRecommended(recommendedArtworks.Take(5).ToList());
-        }
-
-
-
-
-
-
+    
 
 
         private bool IsImageAlreadyAdded(Image image)
@@ -300,16 +313,16 @@ namespace ArteApp
         private bool CompareImages(Image img1, Image img2)
         {
 
-            byte[] img1Bytes = ImageToByteArray(img1);
-            byte[] img2Bytes = ImageToByteArray(img2);
+            byte[] img1Bytes = ConvertirImagenABytes(img1);
+            byte[] img2Bytes = ConvertirImagenABytes(img2);
             return StructuralComparisons.StructuralEqualityComparer.Equals(img1Bytes, img2Bytes);
         }
 
-        private byte[] ImageToByteArray(Image image)
+        private byte[] ConvertirImagenABytes(Image imagen)
         {
-            using (var ms = new System.IO.MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imagen.Save(ms, imagen.RawFormat);
                 return ms.ToArray();
             }
         }
@@ -415,16 +428,12 @@ namespace ArteApp
 
             // Reorganizar favoritos
             ReorganizeFavorites();
+            
 
-            // Generar y mostrar recomendaciones
-            GenerateRecommendations();
+           
         }
 
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void ReorganizeFavorites()
         {
             List<(Image Image, string Name)> favorites = new List<(Image, string)>();
@@ -477,6 +486,9 @@ namespace ArteApp
                 }
             }
         }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    }
-        
+}

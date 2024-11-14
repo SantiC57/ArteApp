@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recomendados.cs" />
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>

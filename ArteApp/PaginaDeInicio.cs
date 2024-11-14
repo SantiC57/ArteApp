@@ -49,8 +49,10 @@ namespace ArteApp
         private void Button1_Click(object sender, EventArgs e)
         {
             string artworkName = label2.Text;
-            favoritosForm.AddFavorite(pictureBox1.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int indiceImagenSeleccionada = 0; // Ejemplo: "imagen1.jpg"
+            favoritosForm.AddFavorite(pictureBox1.Image, artworkName, indiceImagenSeleccionada);
+           
         }
 
 
@@ -90,35 +92,41 @@ namespace ArteApp
         private void Button2_Click(object sender, EventArgs e)
         {
             string artworkName = label5.Text;
-            favoritosForm.AddFavorite(pictureBox2.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int indiceImagenSeleccionada = 1; 
+            favoritosForm.AddFavorite(pictureBox2.Image, artworkName, indiceImagenSeleccionada);
+            
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
             string artworkName = label8.Text;
-            favoritosForm.AddFavorite(pictureBox3.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int indiceImagenSeleccionada = 2;
+            favoritosForm.AddFavorite(pictureBox3.Image, artworkName, indiceImagenSeleccionada);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string artworkName = label12.Text;
-            favoritosForm.AddFavorite(pictureBox4.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int indiceImagenSeleccionada = 3;
+            favoritosForm.AddFavorite(pictureBox4.Image, artworkName, indiceImagenSeleccionada);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             string artworkName = label18.Text;
-            favoritosForm.AddFavorite(pictureBox6.Image, artworkName);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int indiceImagenSeleccionada = 4;
+            favoritosForm.AddFavorite(pictureBox6.Image, artworkName, indiceImagenSeleccionada);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             string artworkName = label16.Text;
-            favoritosForm.AddFavorite(pictureBox5.Image, artworkName);
+            int indiceImagenSeleccionada = 5;
+            favoritosForm.AddFavorite(pictureBox5.Image, artworkName, indiceImagenSeleccionada);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
