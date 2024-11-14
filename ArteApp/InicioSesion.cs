@@ -15,6 +15,7 @@ namespace ArteApp
     public partial class frmInicioSesion : Form
     {
         private string connectionString = "Server=localhost;Database=Galeria;Uid=root;Pwd=admin123";
+        private int attemptCount = 0; // Añadir el campo attemptCount
 
         public frmInicioSesion()
         {
@@ -92,6 +93,11 @@ namespace ArteApp
                 mskConstraseñaIS.Clear();
                 e.Handled = true;
             }
+        }
+
+        private void mskConstraseñaIS_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

@@ -177,6 +177,12 @@ namespace ArteApp
             Sandro_Botticelli botticelliForm = new Sandro_Botticelli(this, favoritosForm); 
             OpenChildForm(botticelliForm);
         }
+
+        private void lblInicioSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 
