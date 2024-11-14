@@ -52,7 +52,7 @@ namespace ArteApp
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Usuario", txtU.Text);
                     command.Parameters.AddWithValue("@Contraseña", mskContraseñaR.Text);
-
+                    MessageBox.Show("Registro exitoso");
                     try
                     {
                         command.ExecuteNonQuery();
