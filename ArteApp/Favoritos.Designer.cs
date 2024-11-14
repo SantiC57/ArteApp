@@ -803,7 +803,7 @@
             this.recommendedLabel2.Size = new System.Drawing.Size(51, 16);
             this.recommendedLabel2.TabIndex = 3;
             this.recommendedLabel2.Text = "label15";
-            this.recommendedLabel2.Click += new System.EventHandler(this.recommendedLabel2_Click);
+            
             // 
             // recommendedPictureBox2
             // 
@@ -935,7 +935,7 @@
             this.label14.Size = new System.Drawing.Size(86, 18);
             this.label14.TabIndex = 34;
             this.label14.Text = "FAVORITOS";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+           
             // 
             // label15
             // 
