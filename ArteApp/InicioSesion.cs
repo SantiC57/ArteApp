@@ -47,6 +47,8 @@ namespace ArteApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            attemptCount = 0; 
+            IniciarSesionRecursivo();
             string username = txtUsuarioIS.Text;
             string password = mskConstraseñaIS.Text;
 
@@ -98,6 +100,48 @@ namespace ArteApp
         private void mskConstraseñaIS_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+        private void IniciarSesionRecursivo()
+        {
+            if (attemptCount >= 3)
+            {
+                MessageBox.Show("Número máximo de intentos alcanzado");
+                return;
+            }
+
+            string username = txtUsuarioIS.Text;
+            string password = mskConstraseñaIS.Text;
+
+            string query = "SELECT * FROM Usuario WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Usuario", username);
+                    command.Parameters.AddWithValue("@Contraseña", password);
+
+                    connection.Open();
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Los datos de inicio de sesión son válidos
+                            FormMenu form1 = new FormMenu();
+                            form1.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Los datos de inicio de sesión son inválidos
+                            attemptCount++;
+                            MessageBox.Show("Inicio de sesión fallido. Intento " + attemptCount + " de 3.");
+                            IniciarSesionRecursivo();
+                        }
+                    }
+                }
+            }
         }
     }
 }
