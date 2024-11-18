@@ -4,11 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;  // Para la clase Image
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -16,55 +16,52 @@ namespace ArteApp
 {
     public partial class Favoritos : Form
     {
-        private FavoriteItem head; 
+        private readonly PictureBox[] pictureBoxes;
+        private readonly Label[] labels;
+        private readonly System.Windows.Forms.GroupBox[] groups;
+        public LSL favoritos;
         private int maxFavorites = 12;
 
         public Favoritos()
         {
             InitializeComponent();
             InitializeGroupBoxes();
+            favoritos = new LSL();
+            pictureBoxes = new[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
+                          pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12 };
+            labels = new[] { label1, label2, label3, label4, label5, label6,
+                    label7, label8, label9, label10, label11, label12 };
+            groups = new[] { groupBox1, groupBox2, groupBox3, groupBox4, groupBox5, groupBox6,
+                    groupBox7, groupBox8, groupBox9, groupBox10, groupBox11, groupBox12 };
         }
 
 
-        public class FavoriteItem
-        {
-            public Image Image { get; set; }
-            public string Name { get; set; }
-            public FavoriteItem Next { get; set; }
-
-            public FavoriteItem(Image image, string name)
-            {
-                Image = image;
-                Name = name;
-                Next = null;
-            }
-        }
 
         private void InitializeGroupBoxes()
         {
-            groupBox2.Visible = false; 
-            groupBox1.Visible = false; 
-            groupBox3.Visible = false; 
-            groupBox4.Visible = false; 
-            groupBox5.Visible = false; 
-            groupBox6.Visible = false; 
-            groupBox7.Visible = false; 
-            groupBox8.Visible = false; 
-            groupBox9.Visible = false; 
-            groupBox10.Visible = false; 
-            groupBox11.Visible = false; 
-            groupBox12.Visible = false; 
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage; 
-            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage; 
+            groupBox2.Visible = false;
+            groupBox1.Visible = false;
+            groupBox3.Visible = false;
+            groupBox4.Visible = false;
+            groupBox5.Visible = false;
+            groupBox6.Visible = false;
+            groupBox7.Visible = false;
+            groupBox8.Visible = false;
+            groupBox9.Visible = false;
+            groupBox10.Visible = false;
+            groupBox11.Visible = false;
+            groupBox12.Visible = false;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }
@@ -76,87 +73,108 @@ namespace ArteApp
         {
             if (IsImageAlreadyAdded(image))
             {
-                MessageBox.Show("Esta imagen ya está en favoritos.", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esta imagen ya está en favoritos.", "Favoritos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            FavoriteItem newItem = new FavoriteItem(image, name);
-
-            if (head == null)
+            if (favoritos.PrimerNodo() == null || !IsMaxFavoritesReached())
             {
-                head = newItem;
+                // Insertar en la lista ligada
+                favoritos.Insertar(indiceImagen);
+
+                // Actualizar la interfaz
+                UpdateFavoritesUI();
+
+                // Ejecutar BFS para recomendaciones
+                EjecutarBFS(indiceImagen);
             }
             else
             {
-                FavoriteItem current = head;
-                int count = 1;
-
-                while (current.Next != null)
-                {
-                    current = current.Next; 
-                    count++;
-                }
-
-                if (count < maxFavorites)
-                {
-                    current.Next = newItem;
-                }
-                else
-                {
-                    MessageBox.Show("No hay más espacio para favoritos.", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                MessageBox.Show("No hay más espacio para favoritos.", "Favoritos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            UpdateFavoritesUI(); 
-            EjecutarBFS(indiceImagen);
         }
+
+
+        private bool IsMaxFavoritesReached()
+        {
+            int count = 0; NS current = favoritos.PrimerNodo();
+            while (current != null)
+            {
+                count++; current = current.RetornaLiga();
+            }
+            return count >= maxFavorites;
+        }
+
+        private bool IsImageAlreadyAdded(Image image)
+        {
+            int indiceImagen = imagenes.IndexOf(image);
+            NS current = favoritos.PrimerNodo();
+
+            while (current != null)
+            {
+                if (current.RetornaIndiceImagen() == indiceImagen)
+                {
+                    return true;
+                }
+                current = current.RetornaLiga();
+            }
+            return false;
+        }
+
+
+
 
         private void UpdateFavoritesUI()
         {
-            FavoriteItem current = head; 
-            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12 }; 
-            Label[] labels = { label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12 }; 
-            System.Windows.Forms.GroupBox[] groups = { groupBox1, groupBox2, groupBox3, groupBox4, groupBox5, groupBox6, groupBox7, groupBox8, groupBox9, groupBox10, groupBox11, groupBox12 }; 
-            
-            for (int i = 0; i < pictureBoxes.Length; i++) 
-            { 
-                if (current != null) 
-                { 
-                    pictureBoxes[i].Image = current.Image; 
-                    labels[i].Text = current.Name; 
-                    groups[i].Visible = true; 
-                    current = current.Next; 
-                } 
-                else 
-                { 
-                    pictureBoxes[i].Image = null; 
-                    labels[i].Text = string.Empty;
-                    groups[i].Visible = false; 
-                } 
+            NS current = favoritos.PrimerNodo();
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                if (current != null)
+                {
+                    pictureBoxes[i].Image = imagenes[current.RetornaIndiceImagen()];
+                    labels[i].Text = nombresImagenes[current.RetornaIndiceImagen()];
+                    groups[i].Visible = true;
+                    current = current.RetornaLiga();
                 }
+                else
+                {
+                    pictureBoxes[i].Image = null;
+                    labels[i].Text = string.Empty;
+                    groups[i].Visible = false;
+                }
+            }
         }
+
+
+
+
+
+
+
 
         private List<Image> imagenes = new List<Image>
         {
-                    Properties.Resources.LaMonaLisa,
-                    Properties.Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
-                    Properties.Resources.LaNocheEstrellada,
-                    Properties.Resources.LaUltimaCena,
-                    Properties.Resources.LosComederosDePatatas,
-                    Properties.Resources.LaMonaLisa,
-                    Properties.Resources.images,
-                    Properties.Resources.El_Hombre_de_Vitruvio,
-                    Properties.Resources.Los_girasoles,
-                    Properties.Resources.La_niña_enferma,
-                    Properties.Resources.El_Bautismo_de_Cristo,
-                    Properties.Resources.La_adoración_de_los_Reyes_Magos,
-                    Properties.Resources.Autorretrato_con_la_oreja_vendada_y_caballete,
-                    Properties.Resources.Salvator_Mundi,
-                    Properties.Resources.Noche_estrellada_sobre_el_Ródano,
-                    Properties.Resources.Madonna,
-                    Properties.Resources.Dama_con_un_Armino,
-                    Properties.Resources.Palas_y_el_Centauro,
-                    Properties.Resources.La_casa_amarilla
+                    Resources.LaMonaLisa,
+                    Resources.ElGrito, // Reemplaza con los nombres correctos de las imágenes
+                    Resources.LaNocheEstrellada,
+                    Resources.LaUltimaCena,
+                    Resources.LosComederosDePatatas,
+                    Resources.images,
+                    Resources.El_Hombre_de_Vitruvio,
+                    Resources.Los_girasoles,
+                    Resources.La_niña_enferma,
+                    Resources.El_Bautismo_de_Cristo,
+                    Resources.La_adoración_de_los_Reyes_Magos,
+                    Resources.Autorretrato_con_la_oreja_vendada_y_caballete,
+                    Resources.Salvator_Mundi,
+                    Resources.Noche_estrellada_sobre_el_Ródano,
+                    Resources.Madonna,
+                    Resources.Dama_con_un_Armino,
+                    Resources.Palas_y_el_Centauro,
+                    Resources.La_casa_amarilla
         };
 
         // Grafo de relaciones entre obras de arte
@@ -189,7 +207,6 @@ namespace ArteApp
     "LaNocheEstrellada",
     "LaUltimaCena",
     "LosComederosDePatatas",
-    "LaMonaLisa",
     "NacimientodeVenus",
     "ElHombreDeVitruvio",
     "LosGirasoles",
@@ -207,131 +224,106 @@ namespace ArteApp
 
         private void EjecutarBFS(int nodoInicial)
         {
-            Queue<int> cola = new Queue<int>();
-            bool[] visitados = new bool[imagenes.Count];
-            int[] pasos = new int[imagenes.Count];
-            cola.Enqueue(nodoInicial);
-            visitados[nodoInicial] = true;
+            // Si no hay nodos en favoritos, limpiar recomendaciones
+            if (favoritos.EsVacia())
+            {
+                LimpiarRecomendaciones();
+                return;
+            }
 
-            // Recorrido BFS
+            var cola = new Queue<int>();
+            var visitados = new HashSet<int>();
+            var pasos = new int[imagenes.Count];
+
+            cola.Enqueue(nodoInicial);
+            visitados.Add(nodoInicial);
+
             while (cola.Count > 0)
             {
                 int nodoActual = cola.Dequeue();
 
-                foreach (int vecino in grafo[nodoActual])
+                if (grafo.TryGetValue(nodoActual, out var vecinos))
                 {
-                    if (!visitados[vecino])
+                    foreach (int vecino in vecinos)
                     {
-                        visitados[vecino] = true;
-                        cola.Enqueue(vecino);
-                        pasos[vecino] = pasos[nodoActual] + 1;
+                        if (!visitados.Contains(vecino))
+                        {
+                            visitados.Add(vecino);
+                            cola.Enqueue(vecino);
+                            pasos[vecino] = pasos[nodoActual] + 1;
+                        }
                     }
                 }
             }
 
-            // Recorrer las imágenes recomendadas
-            List<Image> imagenesRecomendadas = new List<Image>();
+            var imagenesRecomendadas = new List<int>();
             for (int i = 0; i < imagenes.Count; i++)
             {
-                if (pasos[i] >= 1 && pasos[i] <= 2) // Si los pasos son 2 o menos, agregar la imagen
+                if (pasos[i] >= 1 && pasos[i] <= 2)
                 {
-                    imagenesRecomendadas.Add(imagenes[i]);
+                    imagenesRecomendadas.Add(i);
                 }
             }
 
-            // Mostrar las imágenes recomendadas en los PictureBox
             MostrarImagenesRecomendadas(imagenesRecomendadas, imagenes, nombresImagenes);
         }
 
-        private void MostrarImagenesRecomendadas(List<Image> imagenesRecomendadas, List<Image> imagenes, List<string> nombresImagenes)
-        {
-            MostrarImagenesRecomendadas(imagenesRecomendadas.Select(imagen => imagenes.IndexOf(imagen)).ToList(), imagenes, nombresImagenes);
-        }
+
+
+
 
         private void MostrarImagenesRecomendadas(List<int> imagenesRecomendadas, List<Image> imagenes, List<string> nombresImagenes)
         {
-            // Asumimos que recommendedGroupBox1, recommendedGroupBox2, etc. están en el formulario
+            // Si no hay imágenes recomendadas, limpiar todo
+            if (imagenesRecomendadas.Count == 0)
+            {
+                LimpiarRecomendaciones();
+                return;
+            }
+
             System.Windows.Forms.GroupBox[] groups = { recommendedGroupBox1, recommendedGroupBox2, recommendedGroupBox3, recommendedGroupBox4, recommendedGroupBox5 };
             PictureBox[] pictureBoxes = { recommendedPictureBox1, recommendedPictureBox2, recommendedPictureBox3, recommendedPictureBox4, recommendedPictureBox5 };
             Label[] labels = { recommendedLabel1, recommendedLabel2, recommendedLabel3, recommendedLabel4, recommendedLabel5 };
 
+            // Filtrar las imágenes que ya están en favoritos
+            var imagenesNoFavoritas = imagenesRecomendadas.Where(i => !IsImageAlreadyAdded(imagenes[i])).ToList();
+
             for (int i = 0; i < pictureBoxes.Length; i++)
             {
-                if (i < imagenesRecomendadas.Count)
+                if (i < imagenesNoFavoritas.Count)
                 {
-                    
-                    pictureBoxes[i].Image = imagenes[imagenesRecomendadas[i]];
-
-                    labels[i].Text = nombresImagenes[imagenesRecomendadas[i]];
-
+                    pictureBoxes[i].Image = imagenes[imagenesNoFavoritas[i]];
+                    labels[i].Text = nombresImagenes[imagenesNoFavoritas[i]];
                     groups[i].Visible = true;
                 }
-
                 else
                 {
- 
+                    pictureBoxes[i].Image = null;
+                    labels[i].Text = string.Empty;
                     groups[i].Visible = false;
                 }
             }
         }
 
 
-
-
-
-        private List<(Image image, string name)> GetFavorites()
+        private void LimpiarRecomendaciones()
         {
-            List<(Image, string)> favorites = new List<(Image, string)>();
+            System.Windows.Forms.GroupBox[] groups = { recommendedGroupBox1, recommendedGroupBox2, recommendedGroupBox3, recommendedGroupBox4, recommendedGroupBox5 };
+            PictureBox[] pictureBoxes = { recommendedPictureBox1, recommendedPictureBox2, recommendedPictureBox3, recommendedPictureBox4, recommendedPictureBox5 };
+            Label[] labels = { recommendedLabel1, recommendedLabel2, recommendedLabel3, recommendedLabel4, recommendedLabel5 };
 
-            if (pictureBox1.Image != null) favorites.Add((pictureBox1.Image, label1.Text));
-            if (pictureBox2.Image != null) favorites.Add((pictureBox2.Image, label2.Text));
-            if (pictureBox3.Image != null) favorites.Add((pictureBox3.Image, label3.Text));
-            if (pictureBox4.Image != null) favorites.Add((pictureBox4.Image, label4.Text));
-            if (pictureBox5.Image != null) favorites.Add((pictureBox5.Image, label5.Text));
-            if (pictureBox6.Image != null) favorites.Add((pictureBox6.Image, label6.Text));
-            if (pictureBox7.Image != null) favorites.Add((pictureBox7.Image, label7.Text));
-            if (pictureBox8.Image != null) favorites.Add((pictureBox8.Image, label8.Text));
-            if (pictureBox9.Image != null) favorites.Add((pictureBox9.Image, label9.Text));
-            if (pictureBox10.Image != null) favorites.Add((pictureBox10.Image, label10.Text));
-            if (pictureBox11.Image != null) favorites.Add((pictureBox11.Image, label11.Text));
-            if (pictureBox12.Image != null) favorites.Add((pictureBox12.Image, label12.Text));
-
-            return favorites;
-        }
-
-
-
-        private bool IsImageAlreadyAdded(Image image)
-        {
-            FavoriteItem current = head; 
-            
-            while (current != null) 
-            { 
-                if (CompareImages(current.Image, image)) 
-                { 
-                    return true;
-                } 
-                current = current.Next;
-            }
-            return false;
-        }
-
-        private bool CompareImages(Image img1, Image img2)
-        {
-            byte[] img1Bytes = ImageToByteArray(img1); 
-            byte[] img2Bytes = ImageToByteArray(img2); 
-            return StructuralComparisons.StructuralEqualityComparer.Equals(img1Bytes, img2Bytes);
-        }
-
-        private byte[] ImageToByteArray(Image image)
-        {
-            using (var ms = new System.IO.MemoryStream())
+            for (int i = 0; i < groups.Length; i++)
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
+                groups[i].Visible = false;
+                pictureBoxes[i].Image = null;
+                labels[i].Text = string.Empty;
             }
         }
-        
+
+
+
+
+
         private void PictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -372,53 +364,39 @@ namespace ArteApp
             RemoveFavorite(pictureBox2, label2, groupBox2);
         }
 
-        
+
 
         private void RemoveFavorite(PictureBox pictureBox, Label label, System.Windows.Forms.GroupBox groupBox)
         {
-            pictureBox.Image = null;
-            label.Text = string.Empty;
-            groupBox.Visible = false;
+            if (pictureBox.Image == null) return;
 
-            // Reorganizar favoritos
-            ReorganizeFavorites();
-            
-
-           
-        }
-
-
-        private void ReorganizeFavorites()
-        {
-            List<(Image Image, string Name)> favorites = new List<(Image, string)>();
-
-            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12 };
-            Label[] labels = { label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12 };
-            System.Windows.Forms.GroupBox[] groups = { groupBox1, groupBox2, groupBox3, groupBox4, groupBox5, groupBox6, groupBox7, groupBox8, groupBox9, groupBox10, groupBox11, groupBox12 };
-
-            // Guardamos los elementos visibles actuales
-            for (int i = 0; i < pictureBoxes.Length; i++)
+            int indiceABorrar = imagenes.IndexOf(pictureBox.Image);
+            if (indiceABorrar != -1)
             {
-                if (pictureBoxes[i].Image != null)
+                try
                 {
-                    favorites.Add((pictureBoxes[i].Image, labels[i].Text));
+                    favoritos.Borrar(indiceABorrar);
+                    UpdateFavoritesUI();
+
+                    // Actualizar recomendaciones basadas en el nuevo primer nodo
+                    if (favoritos.PrimerNodo() != null)
+                    {
+                        EjecutarBFS(favoritos.PrimerNodo().RetornaIndiceImagen());
+                    }
+                    else
+                    {
+                        // Si no hay más favoritos, limpiar las recomendaciones
+                        LimpiarRecomendaciones();
+                    }
+                }
+                catch (Exception)
+                {
+                    // Manejar el caso donde la imagen no está en la lista
                 }
             }
-
-            // Limpiamos todos los PictureBox y Labels actuales
-            foreach (var group in groups)
-            {
-                group.Visible = false;
-            }
-
-            // Reasignamos los favoritos a los PictureBox en orden
-            for (int i = 0; i < favorites.Count; i++)
-            {
-                pictureBoxes[i].Image = favorites[i].Image;
-                labels[i].Text = favorites[i].Name;
-                groups[i].Visible = true;
-            }
         }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -474,5 +452,175 @@ namespace ArteApp
         {
             RemoveFavorite(pictureBox7, label7, groupBox7);
         }
+
+        public class NS
+        {
+            public int IndiceImagen { get; set; }
+            public NS Liga { get; set; }
+
+            public NS(int indiceImagen)
+            {
+                IndiceImagen = indiceImagen;
+                Liga = null;
+            }
+
+            public void AsignaLiga(NS nodoALigar)
+            {
+                Liga = nodoALigar;
+            }
+
+            public void AsignaIndiceImagen(int indiceImagen)
+            {
+                IndiceImagen = indiceImagen;
+            }
+
+            public NS RetornaLiga()
+            {
+                return Liga;
+            }
+
+            public int RetornaIndiceImagen()
+            {
+                return IndiceImagen;
+            }
+        }
+
+        public class LSL
+        {
+            public NS primero;
+            public NS ultimo;
+
+            public LSL()
+            {
+                primero = null;
+                ultimo = null;
+            }
+
+            public bool EsVacia()
+            {
+                return primero == null;
+            }
+
+            public NS PrimerNodo()
+            {
+                return primero;
+            }
+
+            public NS UltimoNodo()
+            {
+                return ultimo;
+            }
+
+            public NS Anterior(NS posterior)
+            {
+                NS iterador = PrimerNodo();
+                NS nodoAnt = null;
+                while (iterador != posterior && iterador != null)
+                {
+                    nodoAnt = iterador;
+                    iterador = iterador.RetornaLiga();
+                }
+                if (iterador == null)
+                {
+                    throw new Exception("No se encontró el nodo en la lista");
+                }
+                return nodoAnt;
+            }
+
+            public NS BuscaDondeInsertar(int candidato)
+            {
+                NS iterador = PrimerNodo();
+                NS nodoAnt = null;
+                while (iterador != null && iterador.RetornaIndiceImagen() < candidato)
+                {
+                    nodoAnt = iterador;
+                    iterador = iterador.RetornaLiga();
+                }
+                return nodoAnt;
+            }
+
+            public void Conectar(NS nodoAConectar, NS nodoAnterior)
+            {
+                if (nodoAnterior == null)
+                {
+                    nodoAConectar.AsignaLiga(primero);
+                    if (primero == null)
+                    {
+                        ultimo = nodoAConectar;
+                    }
+                    primero = nodoAConectar;
+                }
+                else
+                {
+                    nodoAConectar.AsignaLiga(nodoAnterior.RetornaLiga());
+                    nodoAnterior.AsignaLiga(nodoAConectar);
+                    if (nodoAnterior == ultimo)
+                    {
+                        ultimo = nodoAConectar;
+                    }
+                }
+            }
+
+            public void Insertar(int dato)
+            {
+                NS nodoAnterior = BuscaDondeInsertar(dato);
+                NS nuevoNodo = new NS(dato);
+                Conectar(nuevoNodo, nodoAnterior);
+            }
+
+            public void Recorrer()
+            {
+                NS iterador = PrimerNodo();
+                while (iterador != null)
+                {
+                    Console.WriteLine(iterador.RetornaIndiceImagen());
+                    iterador = iterador.RetornaLiga();
+                }
+            }
+
+            public NS BuscarDato(int dato)
+            {
+                NS iterador = PrimerNodo();
+                while (iterador != null && iterador.RetornaIndiceImagen() != dato)
+                {
+                    iterador = iterador.RetornaLiga();
+                }
+                return iterador;
+            }
+
+            public void Desconectar(NS nodoADesconectar)
+            {
+                NS nodoAnterior = Anterior(nodoADesconectar);
+                if (nodoADesconectar == primero)
+                {
+                    primero = primero.RetornaLiga();
+                    if (primero == null)
+                    {
+                        ultimo = null;
+                    }
+                }
+                else
+                {
+                    nodoAnterior.AsignaLiga(nodoADesconectar.RetornaLiga());
+                    if (nodoADesconectar == ultimo)
+                    {
+                        ultimo = nodoAnterior;
+                    }
+                }
+            }
+
+            public void Borrar(int datoABorrar)
+            {
+                NS nodoABorrar = BuscarDato(datoABorrar);
+                if (nodoABorrar == null)
+                {
+                    throw new Exception("Dato inexistente en la lista");
+                }
+                Desconectar(nodoABorrar);
+            }
+        }
+
+
     }
 }
+

@@ -93,7 +93,7 @@ namespace ArteApp
         {
             string artworkName = label5.Text;
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            int indiceImagenSeleccionada = 1; 
+            int indiceImagenSeleccionada = 2; 
             favoritosForm.AddFavorite(pictureBox2.Image, artworkName, indiceImagenSeleccionada);
             
         }
@@ -102,7 +102,7 @@ namespace ArteApp
         {
             string artworkName = label8.Text;
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            int indiceImagenSeleccionada = 2;
+            int indiceImagenSeleccionada = 1;
             favoritosForm.AddFavorite(pictureBox3.Image, artworkName, indiceImagenSeleccionada);
         }
 
@@ -118,14 +118,14 @@ namespace ArteApp
         {
             string artworkName = label18.Text;
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            int indiceImagenSeleccionada = 4;
+            int indiceImagenSeleccionada = 5;
             favoritosForm.AddFavorite(pictureBox6.Image, artworkName, indiceImagenSeleccionada);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             string artworkName = label16.Text;
-            int indiceImagenSeleccionada = 5;
+            int indiceImagenSeleccionada = 4;
             favoritosForm.AddFavorite(pictureBox5.Image, artworkName, indiceImagenSeleccionada);
             MessageBox.Show($"{artworkName} se ha añadido a favoritos", "Favoritos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
