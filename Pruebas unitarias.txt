@@ -1,0 +1,50 @@
+Pruebas unitarias
+
+Este conjunto de pruebas unitarias tiene como objetivo verificar el correcto funcionamiento del sistema de recomendaciones de "favoritos" mediante un grafo y un conjunto de imágenes simuladas. El sistema utiliza un algoritmo de Búsqueda en Anchura (BFS) para procesar las conexiones entre nodos del grafo y generar recomendaciones basadas en un nodo inicial.
+
+Clases Incluidas
+El código incluye cuatro clases principales, cada una diseñada para representar o simular una funcionalidad específica dentro del sistema:
+
+MockImagenes
+Simula una colección de imágenes para pruebas, proporcionando nombres y objetos de imágenes generadas dinámicamente.
+
+Propiedades:
+
+Nombres: Una lista de nombres de imágenes (List<string>).
+Imagenes: Una lista de imágenes simuladas (List<System.Drawing.Image>).
+Constructor:
+
+Genera una lista de imágenes vacías con dimensiones de 100x100 píxeles.
+MockGrafo
+Representa un grafo dirigido con nodos y conexiones (vecinos).
+
+Propiedades:
+
+conexiones: Un diccionario que mapea nodos (int) a listas de vecinos (List<int>).
+Métodos:
+
+AgregarConexion(int nodo, List<int> vecinos): Agrega una lista de vecinos a un nodo específico.
+TryGetValue(int nodo, out List<int> vecinos): Intenta recuperar los vecinos de un nodo específico.
+MockFavoritos
+Simula una lista de nodos favoritos.
+
+Propiedades:
+
+nodos: Una lista que contiene los índices de nodos favoritos (List<int>).
+Métodos:
+
+EsVacia(): Devuelve true si la lista de nodos está vacía.
+PrimerNodo(): Retorna el primer nodo de la lista o null si está vacía.
+Insertar(int indice): Agrega un nodo a la lista.
+FavoritosManager
+Coordina las operaciones sobre favoritos, el grafo y las imágenes.
+
+Propiedades:
+
+favoritos: Instancia de la clase MockFavoritos.
+grafo: Instancia de la clase MockGrafo.
+imagenes: Instancia de la clase MockImagenes.
+Métodos:
+
+EjecutarBFS(int nodoInicial): Realiza un recorrido BFS en el grafo a partir de un nodo inicial.
+ObtenerRecomendaciones(): Retorna una lista de nodos recomendados (en este caso, es fija: [1, 2]).
